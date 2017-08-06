@@ -3,7 +3,7 @@
 	- [Parameters](/table-view/parameters)
 	- [Pagination](/table-view/pagination)
 	- [Parsing](/table-view/parsing)
-	- [Loader & pull to refresh](/table-view/loader-pull-to-refresh)
+	- [Loader & pull to refresh](/table-view/loader)
 	- [XIB](/table-view/xib)
 	- [Authentication](/table-view/authentication)
 	- [Custom cases](/table-view/custom-cases)
