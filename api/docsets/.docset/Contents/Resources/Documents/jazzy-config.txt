@@ -1,0 +1,5 @@
+cd /Users/daniarnaout/Documents/Work/Codepack/Development/codepack-ios/Codepack/Codepack
+
+jazzy --objc --umbrella-header Codepack.h --framework-root . --sdk iphonesimulator --author Codepack --author_url http://usecodepack.com  —module-version 1.0
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CPImageView Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/CPImageView" class="dashAnchor"></a>
+    <a title="CPImageView Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CPImageView Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/UIImageView(Inspectable).html">UIImageView(Inspectable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CPCollectionViewController.html">CPCollectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPDateLabel.html">CPDateLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPImageView.html">CPImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPLabel.html">CPLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPStore.html">CPStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPTableViewController.html">CPTableViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CodepackVersionNumber">CodepackVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CodepackVersionString">CodepackVersionString</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CPImageView</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPImageView</span> <span class="p">:</span> <span class="nc">UIImageView</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>CPImageView</code> is a subclass of <code>UIImageView</code> with convenience properties to help display images fetched from a JSON document.</p>
+<h2 id='image-downloading' class='heading'>Image Downloading</h2>
+
+<p>Codepack handles images download without you worrying about what&rsquo;s going on behind the scenes. If the value of <code>jsonKey</code> is a URL, then the image will be downloaded and displayed as soon as its fully downloaded.</p>
+<h2 id='image-caching' class='heading'>Image Caching</h2>
+
+<p>Codepack caches images on your behalf both in memory and on disk.
+Codepacks handles caches expiry dates, it also ensures no single URL is downloaded more than once. Cache options will be available in next releases.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPImageView(py)jsonKey"></a>
+                    <a name="//apple_ref/objc/Property/jsonKey" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPImageView(py)jsonKey">jsonKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The JSON key that represents the value from the JSON document that represents the image to be displayed.</p>
+
+<p>Use this property to apply auto-data-binding between a JSON key and an image view.
+There are three different types of values that Codepack expects in thsi process:</p>
+
+<ol>
+<li>URL (A full URL that points to an image. Preferably ending with an extension)</li>
+<li>A string (In this case, Codepack will look into your app&rsquo;s Assets folder to match an image with the same name)</li>
+<li>A boolean (In this case, you&rsquo;ll have to set the image from your Assets folder. If the value is false, then the image will be hidden, otherwise, it&rsquo;ll be shown) 
+Ex: Verified badge in your profile.</li>
+</ol>
+
+<p>Supported image formats are: PNG, JPG, JPEG.
+Later support for GIF.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">jsonKey</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://usecodepack.com" target="_blank" rel="external">Codepack</a>. All rights reserved. (Last updated: 2017-07-30)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

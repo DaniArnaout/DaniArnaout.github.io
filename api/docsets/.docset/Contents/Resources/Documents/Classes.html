@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Classes  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Classes  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Classes  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Categories/UIImageView(Inspectable).html">UIImageView(Inspectable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/CPCollectionViewController.html">CPCollectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CPDateLabel.html">CPDateLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CPImageView.html">CPImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CPLabel.html">CPLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CPStore.html">CPStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CPTableViewController.html">CPTableViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Constants.html#/c:@CodepackVersionNumber">CodepackVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Constants.html#/c:@CodepackVersionString">CodepackVersionString</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Classes</h1>
+            <p>The following classes are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPCollectionViewController"></a>
+                    <a name="//apple_ref/objc/Class/CPCollectionViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPCollectionViewController">CPCollectionViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="Classes/CPTableViewController.html">CPTableViewController</a></code> is a subclass of <code>UITableViewController</code> with convenience properties for making HTTP requests. A <code>url</code> must be provided to successfully make a request out of the box.</p>
+<h2 id='subclassing-notes' class='heading'>Subclassing Notes</h2>
+
+<p>Developers targeting iOS 9 or later that deal extensively with a web service are encouraged to use <code><a href="Classes/CPTableViewController.html">CPTableViewController</a></code> without the need to subclass it.
+In case you need to alter any of UITableViewController&rsquo;s delegate methods, feel free to subclass <code><a href="Classes/CPTableViewController.html">CPTableViewController</a></code> and implement your own methods.</p>
+<h2 id='methods-to-override' class='heading'>Methods to Override</h2>
+
+<p>To change the behavior of all data task operation construction, override <code>UITableViewController</code> regular delegate and datasource methods like:  <code>tableView:tableView cellForRowAtIndexPath:indexPath;</code>.</p>
+
+                        <a href="Classes/CPCollectionViewController.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPCollectionViewController</span> <span class="p">:</span> <span class="nc">UICollectionViewController</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">CPCollectionViewController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPTableViewController"></a>
+                    <a name="//apple_ref/objc/Class/CPTableViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPTableViewController">CPTableViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>CPTableViewController</code> is a subclass of <code>UITableViewController</code> with convenience properties for making HTTP requests. A <code>url</code> must be provided to successfully make a request out of the box.</p>
+<h2 id='subclassing-notes' class='heading'>Subclassing Notes</h2>
+
+<p>Developers targeting iOS 9 or later that deal extensively with a web service are encouraged to use <code>CPTableViewController</code> without the need to subclass it.
+In case you need to alter any of UITableViewController&rsquo;s delegate methods, feel free to subclass <code>CPTableViewController</code> and implement your own methods.</p>
+<h2 id='methods-to-override' class='heading'>Methods to Override</h2>
+
+<p>To change the behavior of all data task operation construction, override <code>UITableViewController</code> regular delegate and datasource methods like:  <code>tableView:tableView cellForRowAtIndexPath:indexPath;</code>.</p>
+
+                        <a href="Classes/CPTableViewController.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPTableViewController</span> <span class="p">:</span> <span class="nc">UITableViewController</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">CPTableViewController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPStore"></a>
+                    <a name="//apple_ref/objc/Class/CPStore" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPStore">CPStore</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>CPStore</code> has convenience methods to store key/value pairs to be used as a parameter in interface builder. Mostly used with <code><a href="Classes/CPTableViewController.html">CPTableViewController</a></code>.</p>
+
+                        <a href="Classes/CPStore.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPStore</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">CPStore</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPDateLabel"></a>
+                    <a name="//apple_ref/objc/Class/CPDateLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPDateLabel">CPDateLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>CPDateLabel</code> is a subclass of <code><a href="Classes/CPLabel.html">CPLabel</a></code> with convenience properties to help display dates parsed from timestamps in any desired format complying with <code>UIDateFormatter</code> standards.</p>
+
+                        <a href="Classes/CPDateLabel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPDateLabel</span> <span class="p">:</span> <span class="nc"><a href="Classes/CPLabel.html">CPLabel</a></span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">CPDateLabel</span> <span class="p">:</span> <span class="kt"><a href="Classes/CPLabel.html">CPLabel</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPImageView"></a>
+                    <a name="//apple_ref/objc/Class/CPImageView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPImageView">CPImageView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>CPImageView</code> is a subclass of <code>UIImageView</code> with convenience properties to help display images fetched from a JSON document.</p>
+<h2 id='image-downloading' class='heading'>Image Downloading</h2>
+
+<p>Codepack handles images download without you worrying about what&rsquo;s going on behind the scenes. If the value of <code>jsonKey</code> is a URL, then the image will be downloaded and displayed as soon as its fully downloaded.</p>
+<h2 id='image-caching' class='heading'>Image Caching</h2>
+
+<p>Codepack caches images on your behalf both in memory and on disk.
+Codepacks handles caches expiry dates, it also ensures no single URL is downloaded more than once. Cache options will be available in next releases.</p>
+
+                        <a href="Classes/CPImageView.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPImageView</span> <span class="p">:</span> <span class="nc">UIImageView</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">CPImageView</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPLabel"></a>
+                    <a name="//apple_ref/objc/Class/CPLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPLabel">CPLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>CPLabel</code> is a subclass of <code>UILabel</code> with convenience properties to help parse and edit outcomes visually. A <code>jsonKey</code> must be provided to successfully and dynamically do databinding within a <code><a href="Classes/CPTableViewController.html">CPTableViewController</a></code>.</p>
+<h2 id='subclassing-notes' class='heading'>Subclassing Notes</h2>
+
+<p>Feel free to sublcass <code>CPLabel</code> and introduce your own customization, as this class just adds few properties on top of the native <code>UILabel</code> class provided by Apple.</p>
+
+                        <a href="Classes/CPLabel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPLabel</span> <span class="p">:</span> <span class="nc">UILabel</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">CPLabel</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://usecodepack.com" target="_blank" rel="external">Codepack</a>. All rights reserved. (Last updated: 2017-07-30)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

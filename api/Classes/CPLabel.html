@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CPLabel Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/CPLabel" class="dashAnchor"></a>
+    <a title="CPLabel Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CPLabel Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/UIImageView(Inspectable).html">UIImageView(Inspectable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CPCollectionViewController.html">CPCollectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPDateLabel.html">CPDateLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPImageView.html">CPImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPLabel.html">CPLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPStore.html">CPStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPTableViewController.html">CPTableViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CodepackVersionNumber">CodepackVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CodepackVersionString">CodepackVersionString</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CPLabel</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPLabel</span> <span class="p">:</span> <span class="nc">UILabel</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>CPLabel</code> is a subclass of <code>UILabel</code> with convenience properties to help parse and edit outcomes visually. A <code>jsonKey</code> must be provided to successfully and dynamically do databinding within a <code><a href="../Classes/CPTableViewController.html">CPTableViewController</a></code>.</p>
+<h2 id='subclassing-notes' class='heading'>Subclassing Notes</h2>
+
+<p>Feel free to sublcass <code>CPLabel</code> and introduce your own customization, as this class just adds few properties on top of the native <code>UILabel</code> class provided by Apple.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPLabel(py)jsonKey"></a>
+                    <a name="//apple_ref/objc/Property/jsonKey" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPLabel(py)jsonKey">jsonKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The JSON key that represents the value from the JSON document that needs to be reflected in this label.</p>
+
+<p>Use this property to apply auto-data-binding between a JSON key and the label text.
+The label text will be set to an empty string if this property was kept empty, of if the key wasn&rsquo;t found in the JSON document.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">jsonKey</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPLabel(py)prefix"></a>
+                    <a name="//apple_ref/objc/Property/prefix" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPLabel(py)prefix">prefix</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The string that needs to proceed the value parsed from the JSON document.</p>
+
+<p>Use this property if you wish to add a string just before the value you retrieved for the label. Ex: If your <code><a href="../Classes/CPLabel.html#/c:objc(cs)CPLabel(py)jsonKey">jsonKey</a></code> returns a number of comments for a certain article, then the label will display the number solely. But, if you want to display it as <q>Comments: 3</q>, then set this property to <q>Comments:</q>.
+Default value is empty string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">prefix</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPLabel(py)suffix"></a>
+                    <a name="//apple_ref/objc/Property/suffix" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPLabel(py)suffix">suffix</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The string that needs to succeed the value parsed from the JSON document.</p>
+
+<p>Use this property if you wish to add a string to the end of the value you retrieved for the label. Ex: If your <code><a href="../Classes/CPLabel.html#/c:objc(cs)CPLabel(py)jsonKey">jsonKey</a></code> returns a number of likes for a certain article, then the label will display the number solely. But, if you want to display it as <q>1 like</q>, then set this property to <q>like</q>.
+Default value is empty string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">suffix</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPLabel(py)pluralize"></a>
+                    <a name="//apple_ref/objc/Property/pluralize" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPLabel(py)pluralize">pluralize</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines if you need to handle singular/plural words in a label.</p>
+
+<p>Use this property along with either prefix or suffix.
+Ex: If your <code><a href="../Classes/CPLabel.html#/c:objc(cs)CPLabel(py)jsonKey">jsonKey</a></code> returns a number of likes for a certain article, then the label will display the number solely. But, if you want to display it as <q>1 like</q> &amp; <q>3 likes</q> in the plural form, then set this property to YES. Codepack will automatically refer to its dictionary and get the plural form of a word if the count is 0 or more than 1.
+Default value is NO.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">pluralize</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">pluralize</span><span class="p">:</span> <span class="kt">Int32</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://usecodepack.com" target="_blank" rel="external">Codepack</a>. All rights reserved. (Last updated: 2017-07-30)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

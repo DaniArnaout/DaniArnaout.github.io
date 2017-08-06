@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CPDateLabel Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/CPDateLabel" class="dashAnchor"></a>
+    <a title="CPDateLabel Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CPDateLabel Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/UIImageView(Inspectable).html">UIImageView(Inspectable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CPCollectionViewController.html">CPCollectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPDateLabel.html">CPDateLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPImageView.html">CPImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPLabel.html">CPLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPStore.html">CPStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CPTableViewController.html">CPTableViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CodepackVersionNumber">CodepackVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CodepackVersionString">CodepackVersionString</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CPDateLabel</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CPDateLabel</span> <span class="p">:</span> <span class="nc"><a href="../Classes/CPLabel.html">CPLabel</a></span></code></pre>
+
+                </div>
+              </div>
+            <p><code>CPDateLabel</code> is a subclass of <code><a href="../Classes/CPLabel.html">CPLabel</a></code> with convenience properties to help display dates parsed from timestamps in any desired format complying with <code>UIDateFormatter</code> standards.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPDateLabel(py)dateFormat"></a>
+                    <a name="//apple_ref/objc/Property/dateFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPDateLabel(py)dateFormat">dateFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The date format according to the standard <code>UIDateFormatter</code></p>
+
+<p>Use this property if you wish to format your timestamp into one of the available <code>UIDateFormatter</code> formats.
+Ex: <q>yyyy-MM-dd HH:mm a</q>
+Ex: <q>EEE MMM dd HH:mm:ss ZZZ yyyy</q>
+Default value is empty string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">dateFormat</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPDateLabel(py)type"></a>
+                    <a name="//apple_ref/objc/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPDateLabel(py)type">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The type of date to be dispalyed</p>
+
+<p>Currently, the only value available is <q>ago</q>, which will format the timestamp into an ago format.
+Ex: 2h
+Ex: 1mo
+Ex: 3m
+Default value is empty string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CPDateLabel(im)formattedDateString:"></a>
+                    <a name="//apple_ref/objc/Method/-formattedDateString:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CPDateLabel(im)formattedDateString:">-formattedDateString:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method formats a timestamp into a desired string that uses the <code><a href="../Classes/CPDateLabel.html#/c:objc(cs)CPDateLabel(py)dateFormat">dateFormat</a></code> provided.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">formattedDateString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">unformatted</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">formattedDateString</span><span class="p">(</span><span class="n">_</span> <span class="nv">unformatted</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>unformatted</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Receives a timestamp that has to be converted into a date string</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a date string according to the format provided by <code><a href="../Classes/CPDateLabel.html#/c:objc(cs)CPDateLabel(py)dateFormat">dateFormat</a></code> property.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://usecodepack.com" target="_blank" rel="external">Codepack</a>. All rights reserved. (Last updated: 2017-07-30)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -19,3 +19,4 @@
 - [**FAQ**](/faq)
 - [**Changelog**](/changelog)
 	- [V1.0](/changelog/1.0) 	
+- <a href="/api/index.html" target="_blank">**API DOCUMENTATION**</a>
