@@ -1,0 +1,14 @@
+- Guide
+  - [Getting Started](/getting-started)
+- [Key Bindings](/key-bindings)
+- [FAQ](/faq)
+- [Troubleshooting](/troubleshooting)
+- Advanced
+- [Advanced Tips](/advanced-tips)
+- [Advanced Configs](/advanced-configs)
+- [Command Line Options](/command-line-options)
+- More
+- [Official Site](https://snipaste.com)
+- [Download](/download)
+- [Translation](/translation)
+- [Changelog](/changelog)
