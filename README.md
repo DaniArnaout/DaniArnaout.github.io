@@ -4,7 +4,7 @@
 > Cut your app development time with a fully customizable native framework for Xcode.
 
 ## Getting started
-Follow the [Getting started](/getting-started/quick-start) guide to setup the framework inside your app.
+Follow the [Getting started](/menu/getting-started/) guide to setup the framework inside your app.
 
 ## Features
 Core services handled by the framework for you:
