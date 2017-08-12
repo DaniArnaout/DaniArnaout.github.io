@@ -1,72 +1,72 @@
 [
   {
-    "image_url": "https://randomuser.me/api/portraits/women/94.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/richard-hendricks.jpg",
     "timestamp": 1491631526,
-    "last_message": "Lorem ut irure est reprehenderit non non nulla duis mollit.",
-    "name": "Kirby Gallagher",
+    "last_message": "Thank god they use tabs!",
+    "name": "Richard Hendricks",
     "id": "5925b5ac22f9a51d0ca5a3ce"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/women/17.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/guilfoyle.jpg",
     "timestamp": 1491639798,
-    "last_message": "Voluptate sint non aute proident nulla sint pariatur et nostrud ipsum duis.",
-    "name": "Marilyn Whitfield",
+    "last_message": "This framework is better than hell.",
+    "name": "Guilfoyle",
     "id": "5925b5ac58cff049f195e566"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/women/49.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/Dinesh.jpg",
     "timestamp": 1491633121,
-    "last_message": "Incididunt laborum sit nostrud consectetur officia anim sint.",
-    "name": "Dunlap Sandoval",
+    "last_message": "I can’t believe Guilfoyle actually loved something other than himself.",
+    "name": "Dinesh",
     "id": "5925b5ac71aef5f0f3febd4a"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/women/7.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/jared.jpg",
     "timestamp": 1491634194,
-    "last_message": "Non duis ex amet dolor laboris duis ad veniam ex minim cillum enim non.",
-    "name": "Rosales Mcguire",
+    "last_message": "Based on my SWOT analysis, this framework is a great investment.",
+    "name": "Jared",
     "id": "5925b5ac6af1272071a57d72"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/men/54.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/jian-yang.jpg",
     "timestamp": 1491634511,
-    "last_message": "Reprehenderit ad id reprehenderit eiusmod ullamco do ex velit laborum id est sunt occaecat.",
-    "name": "Head Dunlap",
+    "last_message": "This is not a hotdog.",
+    "name": "Jian Yang",
     "id": "5925b5acdfecdab484513b96"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/men/41.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/erlic-bachman.jpg",
     "timestamp": 1491642125,
-    "last_message": "Magna exercitation consequat qui proident incididunt aliqua aute dolore ullamco.",
-    "name": "Verna Boyle",
+    "last_message": "Abstract Layer is the intersection of spirituality and automation.",
+    "name": "Erlic Bachman",
     "id": "5925b5acec7ff952f35a65eb"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/men/34.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/laurie-bream.jpg",
     "timestamp": 1491633389,
-    "last_message": "Ullamco quis ex reprehenderit qui nulla labore veniam ad tempor laboris aliqua adipisicing reprehenderit.",
-    "name": "Jan Avery",
+    "last_message": "Is Abstract Layer raising?",
+    "name": "Laurie Bream",
     "id": "5925b5ac9b66bc12c486cdfb"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/men/69.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/gavin-belson.jpg",
     "timestamp": 1491641044,
-    "last_message": "Adipisicing ullamco consectetur magna sit commodo.",
-    "name": "Lela Harding",
+    "last_message": "Why again did Hooli not build this framework?",
+    "name": "Gavin Belson",
     "id": "5925b5acff14642da4571ef2"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/men/18.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/russ-hanneman.jpg",
     "timestamp": 1491630862,
-    "last_message": "Consequat nulla ipsum ullamco excepteur fugiat.",
-    "name": "Bernadine Briggs",
+    "last_message": "This framework f*cks!",
+    "name": "Russ Hanneman",
     "id": "5925b5ac42c8cdfb0c17664d"
   },
   {
-    "image_url": "https://randomuser.me/api/portraits/women/94.jpg",
+    "image_url": "http://docs.abstractlayer.com/demo/table-view/images/big-head.jpg",
     "timestamp": 1491639079,
-    "last_message": "Elit laborum ullamco exercitation cupidatat amet excepteur.",
-    "name": "Golden May",
+    "last_message": "Woah this Abstract Layer thing is awesome!!",
+    "name": "Big Head",
     "id": "5925b5ac29f5b9e382590e1a"
   }
 ]
