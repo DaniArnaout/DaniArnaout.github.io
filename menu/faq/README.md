@@ -302,65 +302,225 @@ Abstract Layer doesn't modify anything related to headers or footers, so just do
 
 ### Can I display multiple sections each with a different cell prototype out of the same JSON?
 
+**Yes.**
+
+Imagine you have a JSON document with two keys: `users` and `products`, each holds an array of values that needs to be displayed in a different cell.
+
+```JSON
+{"products":[
+  {
+	"image_url": "https://firebasestorage.googleapis.com/v0/b/abstract-layer.appspot.com/o/Demo%2FCollectionView%2FSaily%2F1.jpg?alt=media&token=55ec1562-7454-4948-8f17-b6aa7479ce42",
+	"name": "Black Dress",
+	"price": "35",
+	"id": "5925b5ac22f9a51d0ca5a3ce"
+  },
+	{"image_url": "https://firebasestorage.googleapis.com/v0/b/abstract-layer.appspot.com/o/Demo%2FCollectionView%2FSaily%2F2.jpg?alt=media&token=dd02becb-cd1c-417e-bd69-29be24f20bfa",
+	"timestamp": 1491639798,
+	"name": "iMac 2017",
+	"price": "750",
+	"id": "5925b5ac58cff049f195e566"
+  }],
+"users":[
+  {
+    "image_url": "https://randomuser.me/api/portraits/women/94.jpg",
+    "timestamp": 1491631526,
+    "last_message": "Lorem ut irure est reprehenderit non non nulla duis mollit.",
+    "name": "Kirby Gallagher",
+    "id": "5925b5ac22f9a51d0ca5a3ce"
+  }]
+}
+```
+
+You add 2 JSON Roots and 2 Cell Identifiers in the way you want them to be displayed. 
+
+Abstract layer will automatically display each in a section, and load the content.
+
+<img width="600" alt="Xcode" src="../../menu/faq/attachements/multi-cell.png">
+
 ---
 
 ### Can I re-arrange table/collection view cells?
 
 **Yes.**
 
+Add the following method to your datasource class:
 
+```Objective-C
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+```
+
+And 
+
+```Objective-C
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+  return [tableView moveRowAtIndexPath:fromIndexPath toIndexPath:toIndexPath];
+}
+```
+
+Abstract Layer will take care of updating both, the table/collection and the datasource array to match the updated results.
 
 ---
 
-### Can I use a base url instead of having to retype the server address overtime?
+### Can I use a base URL instead of having to retype the server address overtime?
+
+**Yes.**
+
+The benefit of having a base URL is to be able to switch in one place so that it applies to the whole app.
+This is useful when switching between development and release environments.
+
+To acheive that, add the following code in the class that handles networking or constants.
+
+```Objective-C
+[[ALStore sharedInstance] setValue:@"http://localhost:8888" forKey:@"baseURL"];
+```
+
+Now, you can use double curley braces in your URL field in the attribute inspector.
+
+<img width="300" alt="Xcode" src="../../menu/faq/attachements/baseUrl.png">
+
+This will automatically be translated to: 
+
+`http://localhost:8888/v3/getUsers`
 
 ---
 
 ### Can I have different cell heights in collection view (Pinterest UI)?
 
+**Yes.**
+
+To acheive a Pineterest-like UI, you only have to provide the height of the collection view cell, and Abstract Layer will automatically handles sizing and viewing of a coherent-looking collection view.
+
+Implement this method in your datasource class:
+
+```Objective-C
+- (CGFloat)collectionView:(UICollectionView *)collectionView heightForItemAtIndexPath:(NSIndexPath *)indexPath itemInfo:(NSDictionary *)item;
+```
+
 ---
 
 ### Do you cache images? And how does it work?
+
+**Yes.**
+
+Image downloading and caching are handled automatically.
+
+As soon as you set the `JSON key` of your `ALImageView`, Abstract Layer will automatically download and cache the image both in memory and on disk, and serve it as needed.
+
+The cache itself is managed internally to clean itself in case of a memory warning or if the downloaded images aren't used for a long time.
 
 ---
 
 ### Does Abstract Layer use any 3rd party dependencies?
 
+**No.**
+
+Abstract Layer avoids relying on any 3rd party dependencies. Instead, all needed components that the native iOS SDK doesn't provide, are build and maintained by our engineers.
+
 ---
 
 ### What is the size of the framework
+
+The average size of the framework is around `1.5 MB` only!
 
 ---
 
 ### Can I subclass the ALTableView/ALCollectionView to do my own customization? 
 
+**Yes.**
+
+Remember, `ALTableView` and `ALCollectionView` are simply subclasses of `UITableView` and `UICollectionView` respectively.
+
+Feel free to subclass them and do your own implementation.
+
+Moreover, set their `delegates` & `datasources` to any object of your own classes.
+
 ---
 
 ### How do I know if there’s a parsing error in a table?
+
+`ALTableView` & `ALCollectionView` has a new delegate designed for status update. These are `<ALTableViewLoadingDelegate>` and `<ALCollectionViewLoadingDelegate>`
+
+Each delegate provides an optional protocols to know when your view loads.
+
+Table View:
+
+```Objective-C
+- (void)didLoadTableViewWithError:(NSError *)error;
+```
+
+Collection View:
+
+```Objective-C
+- (void)didLoadCollectionViewWithError:(NSError *)error;
+```
+
+Set `loadingDelegate` to one of your classes, then implement this method.
+If the `error` object is empty, then no error occured.
+Otherwise, you can print out the `error.localizedString` to check for the error details.
 
 ---
 
 
 ### How do I know if there’s a URL or server error in a table/collection?
 
+`ALTableView` & `ALCollectionView` has a new delegate designed for status update. These are `<ALTableViewLoadingDelegate>` and `<ALCollectionViewLoadingDelegate>`
+
+Each delegate provides an optional protocols to know when your view loads.
+
+Table View:
+
+```Objective-C
+- (void)didLoadTableViewWithError:(NSError *)error;
+```
+
+Collection View:
+
+```Objective-C
+- (void)didLoadCollectionViewWithError:(NSError *)error;
+```
+
+Set `loadingDelegate` to one of your classes, then implement this method.
+If the `error` object is empty, then no error occured.
+Otherwise, you can print out the `error.localizedString` to check for the error details.
+
 ---
 
 ### Can I implement force touch on a cell?
+
+**Yes.**
+
+Just like any other native iOS `API`, touch force can be implemented just as if you would implement it without Abstract Layer.
+
+Remember, `ALTableView` and `ALCollectionView` are simply subclasses of `UITableView` and `UICollectionView` respectively.
 
 ---
 
 
 ### Does the table view support different encodings for different http methods?
 
+**Yes.**
+
+For `GET` http methods, URL encoding is applied.
+
+For `POST`, `UPDATE`, and `DELETE` http methods, the parameters are encoded and sent in a JSON format.
+
 ---
 
 ### What do you use to handle network requests? Is it native NSURLSession or any other 3rd party library?
+
+Abstract Layer builds on top of native iOS SDK frameworks to handle major aspects of app development. It's engineered to avoid relying on any 3rd party dependencies.
+
+So `NSURLSession` is used as the core networking component in building and managing requests & sessions.
 
 ---
 
 ### What if my JSON document is a local file?
 
-If you JSON document is a local file (in your app bundle), add its name in the URL section, and that's it. Abstrac Layer will process it just like it was downloaded from an API.
+If you JSON document is a local file (in your app bundle), add its name in the URL section, and that's it. 
+
+Abstrac Layer will look into your app's bundle and process the JSON document just like it was downloaded from an API.
 
 <img width="300" alt="Xcode" src="../../menu/faq/attachements/local-json.png">
 
