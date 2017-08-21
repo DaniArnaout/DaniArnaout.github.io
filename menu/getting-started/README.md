@@ -20,7 +20,7 @@
 
 ### <a name="install"></a>Install framework
 
-4. Download Codepack. (Installation via Coacoapods will be available soon)
+4. [Download Abstract Layer](../../framework/AbstractLayer v1.0.zip). (Installation via Coacoapods will be available soon)
 5. Drag Codepack.framework into your project and make sure "Copy items if needed" is checked
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-framework.png">
@@ -34,8 +34,7 @@
 8. Tap (plus) sign in "Embedded Binaries" section, and add Codepack there
 
 ### Get license key
-Head to the dashboard to get your special license key.
-
+To get your free tiral license key, email us at <support@abstractlayer.com>
 
 ### Show me the magic
 As soon as you integrate the framework within your project, `UIKit` classes like `UITableViewController` will acquire extra powers, that is more attributes in the Attributes Inspector.
