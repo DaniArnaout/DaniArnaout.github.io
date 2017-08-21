@@ -1,7 +1,7 @@
 - [**Getting started**](/menu/getting-started/README.md)
 - **Table view**
 	- [**Overview**](/menu/table-view/README.md)
-	- [Parameters](/menu/table-view/parameters/README.md)
+	- [Parameters](/menu/table-view/parameters)
 	- [Pagination](/menu/table-view/pagination)
 	- [Parsing](/menu/table-view/parsing)
 	- [Loader & pull to refresh](/menu/table-view/loader)

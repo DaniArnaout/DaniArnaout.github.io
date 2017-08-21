@@ -112,58 +112,190 @@ Collection View:
 
 ### How do I know if the table/collection has loaded?
 
-`ALTableView` & `ALCollectionView` has a new delegate designed for status update. These are `<ALTableViewLoading>`
+`ALTableView` & `ALCollectionView` has a new delegate designed for status update. These are `<ALTableViewLoadingDelegate>` and `<ALCollectionViewLoadingDelegate>`
+
+Each delegate provides two optional protocols for will/did load.
+
+Table View:
+
+```Objective-C
+- (void)willLoadTableView;
+
+- (void)didLoadTableViewWithError:(NSError *)error;
+```
+
+Collection View:
+
+```Objective-C
+- (void)willLoadCollectionView;
+
+- (void)didLoadCollectionViewWithError:(NSError *)error;
+```
+Set `loadingDelegate` to one of your classes, then implement any of those methods accordingly.
+
+Example:
+
+```Objective-C
+self.tableView.loadingDelegate = self;
+``` 
+And
+
+```Objective-C
+self.collectionView.loadingDelegate = self;
+``` 
 
 ---
 
 ### Can I have different number of columns in a collection view according to different device types and orientation?
 
+**Yes.**
+
+From your attribute inspector, just choose the number of columns for each device.
+
+The available options are:
+
+* iPhone portrait
+* iPhone landscape
+* iPad portrait
+* iPad landscape
+
+<img width="300" alt="Xcode" src="../../menu/faq/attachements/columns.png">
+
 ---
 
 ### How do I know if any error occurs while loading the table/collection?
 
+`ALTableView` & `ALCollectionView` has a new delegate designed for status update. These are `<ALTableViewLoadingDelegate>` and `<ALCollectionViewLoadingDelegate>`
+
+Each delegate provides an optional protocols to know when your view loads.
+
+Table View:
+
+```Objective-C
+- (void)didLoadTableViewWithError:(NSError *)error;
+```
+
+Collection View:
+
+```Objective-C
+- (void)didLoadCollectionViewWithError:(NSError *)error;
+```
+
+Set `loadingDelegate` to one of your classes, then implement this method.
+If the `error` object is empty, then no error occured.
+Otherwise, you can print out the `error.localizedString` to check for the error details.
+
 ---
 
-
 ### Do I have access to the JSON response data if I need to extract any values?
+
+**Yes.**
+
+Within your `ALTableView` or `ALCollectionView` instance, there's a property called `array`. This represents the parsed array of models that populates your view.
+
+```Objective-C
+self.collectionView.array
+self.tableView.array
+```
 
 ---
 
 
 ### Can I pass dynamic parameters to the table/collection view?
 
+**Yes.**
+
+Check out the `Parameters` section in the guide.
+
+[Parameters for table view.](../../menu/table-view/parameters)
+
+[Parameters for collection view.](../../menu/collection-view/parameters)
+
 ---
 
 ### Can I have a collection view inside a table view inside a table view?
+
+**Yes.**
+
+Not sure why would you need that, but yes, you can do that.
+
+Each instance of `ALTableView` or `ALCollectionView` is a separate entity, so you can simply have as much of those in 1 view controller.
+
+Just implement each one by setting its attribute from the attribute inspector, and you're ready!
 
 ---
 
 
 ### How do I push data from the selected table view cell to the next view controller?
 
+Within your `ALTableView` or `ALCollectionView` instance, there's a property called `array`. This represents the parsed array of models that populates your view.
+
+For example, here's how you push the data of the cell the user has just tapped:
+
+```Objective-C
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSDictionary *item = self.tableView.array[indexPath.row];
+  // You're good to go.
+}
+```
+
 ---
 
 ### Can I use XIBs instead of storyboard?
 
+**Yes.**
+
+Refer to the guide about XIB.
+
+[XIB for table view.](../../menu/table-view/xib)
+
+[XIB for collection view.](../../menu/collection-view/xib)
+
 ---
 
-### How do I add a loader to image? Are there any callbacks?
+### How do I add a loader to image?
 
----
+Simply, click on your `ALImageView` and head to your attribute inspector.
 
-### Are there any special call back methods added for table/collection view?
+Turn on the loader to `ON` and pick a color for your loader.
+<img width="300" alt="Xcode" src="../../menu/faq/attachements/loader.png">
 
 ---
 
 ### Can I use Abstract Layer table view inside a UITableViewController?
 
+**Yes.**
+
+Simply, click on the table view inside the `UITableViewController` that you drag to your storyboard and set its class to `ALTableView`, and there you go.
+
+<img width="500" alt="Xcode" src="../../menu/faq/attachements/tableview-class.png">
+
 ---
 
 ### Can I add an ‘edit’ or ‘delete’ option in a table/collection view?
 
+**Yes.**
+
+Copy/paste the following methods, and you'll be set. Abstract Layer handle deleting the cells and their corresponding data from the datasource.
+
+```Objective-C
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+```
+
+```Objective-C
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  [(ALTableView *)tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+}
+```
 ---
 
 ### Can I add headers and footers to the table?
+
+**Yes.**
+
+Abstract Layer doesn't modify anything related to headers or footers, so just do it the regular way by dragging a view on top of your `UITableView` in storybaord, or do it by code.
 
 ---
 
@@ -173,6 +305,10 @@ Collection View:
 ---
 
 ### Can I re-arrange table/collection view cells?
+
+**Yes.**
+
+
 
 ---
 
@@ -223,5 +359,9 @@ Collection View:
 ---
 
 ### What if my JSON document is a local file?
+
+If you JSON document is a local file (in your app bundle), add its name in the URL section, and that's it. Abstrac Layer will process it just like it was downloaded from an API.
+
+<img width="300" alt="Xcode" src="../../menu/faq/attachements/local-json.png">
 
 ---
