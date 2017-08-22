@@ -1,6 +1,7 @@
-- [**Getting started**](/menu/getting-started/README.md)
+- [**FAQ**](/menu/faq/)
+- [**Getting started**](/menu/getting-started/)
 - **Table view**
-	- [**Overview**](/menu/table-view/README.md)
+	- [**Overview**](/menu/table-view/)
 	- [Parameters](/menu/table-view/parameters)
 	- [Pagination](/menu/table-view/pagination)
 	- [Parsing](/menu/table-view/parsing)
@@ -9,7 +10,7 @@
 	- [Authentication](/menu/table-view/authentication)
 	- [Custom cases](/menu/table-view/custom-cases)
 - **Collection view**
-	- [**Overview**](/menu/collection-view/README.md)
+	- [**Overview**](/menu/collection-view/)
 	- [Parameters](/menu/collection-view/parameters)
 	- [Pagination](/menu/collection-view/pagination)
 	- [Parsing](/menu/collection-view/parsing)
@@ -18,7 +19,6 @@
 	- [Authentication](/menu/collection-view/authentication)
 	- [Custom cases](/menu/collection-view/custom-cases)
 - [**Debugging**](/menu/debugging/)
-- [**FAQ**](/menu/faq/)
 - [**Changelog**](/menu/changelog/)
 	- [V1.0](/menu/changelog/1.0/) 	
 - <a href="menu/api/index.html" target="_blank">**API DOCUMENTATION**</a>
