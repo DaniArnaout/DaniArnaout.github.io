@@ -4,7 +4,7 @@
 
 ### Create a new project
 
-> If you have an existing project, skip to [Install framework](#install).
+> If you have an existing project, skip to [Install framework](../../menu/getting-started/README?id=install-framework).
 
 1. Open Xcode and select "Create a new Xcode project"
 <br/>
@@ -18,9 +18,9 @@
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-conversations.png">
 
-### <a name="install"></a>Install framework
+### Install framework
 
-4. [Download Abstract Layer](../../framework/AbstractLayer v1.0.zip). (Installation via Coacoapods will be available soon)
+4. <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayer%20v1.0.zip">Download Abstract Layer framework.</a> (Installation via Coacoapods will be available soon)
 5. Drag Codepack.framework into your project and make sure "Copy items if needed" is checked
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-framework.png">
@@ -34,7 +34,8 @@
 8. Tap (plus) sign in "Embedded Binaries" section, and add Codepack there
 
 ### Get license key
-To get your free tiral license key, email us at <support@abstractlayer.com>
+To get your free tiral license key, email us at <a href="mailto:support@abstractlayer.com?Subject=Free%20Trial%20Key%20Request" target="_top">support@asbtractlayer.com</a>
+</p>
 
 ### Show me the magic
 As soon as you integrate the framework within your project, `UIKit` classes like `UITableViewController` will acquire extra powers, that is more attributes in the Attributes Inspector.
