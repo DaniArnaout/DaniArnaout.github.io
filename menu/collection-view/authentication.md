@@ -2,7 +2,7 @@
 
 > Learn how to handle different types of authentication like JWT
 
-Currently, Codepack supports JWT.
+Currently, Abstract Layer supports JWT.
 To enable it:
 
 1. Type in "JWT" in your collection's attribute "Auth Type"

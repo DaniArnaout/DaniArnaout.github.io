@@ -3,11 +3,11 @@
 
 You're building the conversations screen in a chat app.
 
-👨‍🎨 **Designer be like**: Here's a screenshot
+**Designer**: Here's a screenshot
 
-<img width="200" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final.png">
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-done.png">
 
-👩‍💻 **Backend Engineer be like**: Here's the [API](https://firebasestorage.googleapis.com/v0/b/abstract-layer.appspot.com/o/Demo%2FCollectionView%2FSaily%2Fsaily-items.json?alt=media&token=63c68591-12fc-4ed1-9e81-e410105f665e). 
+**Backend Engineer**: Here's the [API](https://firebasestorage.googleapis.com/v0/b/abstract-layer.appspot.com/o/Demo%2FCollectionView%2FSaily%2Fsaily-items.json?alt=media&token=63c68591-12fc-4ed1-9e81-e410105f665e). 
 
 <details>
   <summary>Click the arrow to check out the full JSON response</summary>
@@ -182,10 +182,15 @@ Run the project, and there you go! MAGIC!
 
 You got your collection view fully designed and populated without writing a single line of code!
 
-### How complex can Abstract Layer go? 
+### Where to go next?
 
-Abstract Layer is ideal for small and medium complexity apps where you can create full apps without having to write a line of code. And just like you saw above, it can be fully customizable.
+Abstract Layer supports lots of features on the `ALCollectionView`, so make sure to check them all out!
 
-If things get more complex, this probably means that your app has a certain functionality or business logic that is very specific and unique. In this case, feel free to add your own code and logic on top. In the end Abstract Layer is just a framework that you add to your native Xcode project.
+* [Parameters](/menu/collection-view/parameters)
+* [Pagination](/menu/collection-view/pagination)
+* [Parsing](/menu/collection-view/parsing)
+* [Loader & pull to refresh](/menu/collection-view/loader)
+* [XIB](/menu/collection-view/xib)
+* [Authentication](/menu/collection-view/authentication)
 
-Check the [customization](/menu/collection-view/custom-cases) section for more examples.
+As for customizability, we dedicated a [whole section](/menu/collection-view/custom-cases) for it.

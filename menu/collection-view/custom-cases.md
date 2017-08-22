@@ -12,7 +12,7 @@ This tutorial covers the following customizations:
 
 By now, this looks magical, but what if you want to customize any of the elements or data?
 
-It's very simple. Codepack subclasses from UIKit classes directly without messing around with the initial implementation. You can simply subclass any of Codepack's classes and do your own customization.
+It's very simple. Abstract Layer subclasses from UIKit classes directly without messing around with the initial implementation. You can simply subclass any of Abstract Layer's classes and do your own customization.
 
 ## UI customization 
 **Example**: Add a thick red border to CPImageView.
@@ -23,7 +23,7 @@ For that you can do either:
 Subclass `UICollectionViewCell` and do you UI customizations
 Subclass `CPImageView` and do your UI customizations.
 
-We'll go with the second option, since it involves modifying a Codepack component.
+We'll go with the second option, since it involves modifying a Abstract Layer component.
 
 Choose "File" → "New" → "File" from Xcode's menu bar
 
@@ -35,8 +35,8 @@ In your storyboard, click on the image view and change its subclass to `CustomIm
 
 <img width="500" alt="Xcode" src="/menu/collection-view/attachments/collection-view-custom-view.png">
 
-Head to your CustomImageView.h and import Codepack instead of UIKit
-`#import <Codepack/CPImageView.h>`
+Head to your CustomImageView.h and import Abstract Layer instead of UIKit
+`#import <Abstract Layer/CPImageView.h>`
 
 Head to your CustomImageView.m and override layoutSubviews with the code that adds a red border
 
@@ -54,7 +54,7 @@ That's it. Just run your project, and see for yourself!
 ## Conditionals
 
 Assume you want to have a collection with alternate row colors (First row with white background, second with blue, third with white, and so on).
-This is exactly the same way you would do it without Codepack. Simply override
+This is exactly the same way you would do it without Abstract Layer. Simply override
 
 ```objective-c
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

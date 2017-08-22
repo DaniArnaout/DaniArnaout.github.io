@@ -20,14 +20,14 @@ Just wrap your parameters with double curly braces like this {{latitude}}.
 
 <img width="600" alt="Xcode" src="/menu/collection-view/attachments/collection-view-parameters-dynamic.png">
 
-But where does Codepack read the value of that variable from? You pass it by calling CPStore:
+But where does Abstract Layer read the value of that variable from? You pass it by calling CPStore:
 
 ```objective-c
 NSString *latitude = ... // Latitude value your read from GPS
 [[CPStore sharedInstance] setValue:latitude forKey:@"latitude"];
 ```
 
-Don't forget to `#import <Codepack/Codepack.h>` in your class.
+Don't forget to `#import <Abstract Layer/Abstract Layer.h>` in your class.
 
 It's as simple as that.
 
