@@ -1,23 +1,32 @@
 # Authentication
 
-> Learn how to handle different types of authentication like JWT
+> Learn how to handle different types of authentication like JWT, OAuth 1.0a, OAuth 2, etc...
 
-Currently, Codepack supports JWT.
+Currently, Abstract Layer supports JWT.
 To enable it:
 
-1. Type in "JWT" in your table's attribute "Auth Type"
-2. Set the header to include both "typ" and "alg" according to JWT's standard
-3. Set your secret within your "Auth Keys" attribute
+* Type in `JWT` in your table's attribute `Auth Type`
+* Set the header to include both `typ` and `alg` according to [JWT's standards](https://jwt.io)
+* Set your secret within your `Auth Keys` attribute
 
 > Important:
-For security reasons, iit's highly recommended that you set your secret by code instead of providing it statically.
+For security reasons, it's highly recommended that you set your secret by code instead of providing it statically.
 
+Just paste in the following line of code, and set it to your actual JWT secret key
+ 
 ```objective-c
 [[CPStore sharedInstance] setValue:@"secret" forKey:@"5c56c063897f1adec08586c4fc29f33a"];
 ```
 <img width="300" alt="Xcode" src="../menu/table-view/attachments/table-view-authentication.png">
 
-To debug your JWT token, refer to their debugger.
+### Where to go next?
 
-## Where to go next?
-Check out how [customomizable](/menu/table-view/custom-cases) Table View 
+Abstract Layer supports lots of features on the `ALTableView`, so make sure to check the rest out!
+
+* [Parameters](/menu/table-view/parameters)
+* [Pagination](/menu/table-view/pagination)
+* [Parsing](/menu/table-view/parsing)
+* [Loader & pull to refresh](/menu/table-view/loader)
+* [XIB](/menu/table-view/xib)
+
+As for customizability, we dedicated a [whole section](/menu/table-view/custom-cases) for it.
