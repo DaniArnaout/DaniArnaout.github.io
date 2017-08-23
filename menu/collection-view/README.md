@@ -115,7 +115,7 @@ From the menu bar choose "Editor" → "Embed in" → "Navigation Controller"
 
 * Select your Navigation Controller and mark it as `Is initial View Controller` from the attributes inspector
 
-<img width="800" alt="Collection view" src="/menu/Collection-view/attachments/Collection-view-main-initial.png">
+<img width="800" alt="Collection view" src="/menu/Collection-view/attachments/collection-view-main-initial.png">
 
 * Click on your prototype cell, and set the `cell identifier` to `cell` in the attributes inspector
 
