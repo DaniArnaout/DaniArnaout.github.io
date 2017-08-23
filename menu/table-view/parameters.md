@@ -30,9 +30,14 @@ Just wrap your parameters with double curly braces like this {{latitude}}.
 
 But where does Abstract Layer read the value of that variable from? You pass it by calling ALStore:
 
-```objective-c
+```Swift
+let latitude = // Latitude value you read from GPS
+ALStore.sharedInstance().setValue(latitude, forKey: "latitude")
+```
+
+```Objective-C
 NSString *latitude = ... // Latitude value you read from GPS
-[[CPStore sharedInstance] setValue:latitude forKey:@"latitude"];
+[[ALStore sharedInstance] setValue:latitude forKey:@"latitude"];
 ```
 
 Don't forget to `#import <AbstractLayer/ALStore.h>` in your class.
@@ -49,4 +54,4 @@ Abstract Layer supports lots of features on the `ALTableView`, so make sure to c
 * [XIB](/menu/table-view/xib)
 * [Authentication](/menu/table-view/authentication)
 
-As for customizability, we dedicated a [whole section](/menu/table-view/custom-cases) for it.
+As for customizability, Abstract Layer has [dedicated section](/menu/table-view/custom-cases) for it.

@@ -416,13 +416,13 @@ The cache itself is managed internally to clean itself in case of a memory warni
 
 **No.**
 
-Abstract Layer avoids relying on any 3rd party dependencies. Instead, all needed components that the native iOS SDK doesn't provide, are build and maintained by our engineers.
+Abstract Layer avoids relying on any 3rd party dependencies. Instead, all needed components that the native iOS SDK doesn't provide, are built and maintained by our engineers.
 
 ---
 
 ### What is the size of the framework
 
-The average size of the framework is around `1.5 MB` only!
+The average size of the framework is around `3 MB` only!
 
 ---
 
@@ -516,7 +516,7 @@ So `NSURLSession` is used as the core networking component in building and manag
 
 ---
 
-### What if my JSON document is a local file?
+### What if your JSON document is a local file?
 
 If you JSON document is a local file (in your app bundle), add its name in the URL section, and that's it. 
 

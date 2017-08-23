@@ -30,7 +30,12 @@ Just wrap your parameters with double curly braces like this {{latitude}}.
 
 But where does Abstract Layer read the value of that variable from? You pass it by calling ALStore:
 
-```objective-c
+```Swift
+let latitude = // Latitude value you read from GPS
+ALStore.sharedInstance().setValue(latitude, forKey: "latitude")
+```
+
+```Objective-C
 NSString *latitude = ... // Latitude value you read from GPS
 [[CPStore sharedInstance] setValue:latitude forKey:@"latitude"];
 ```

@@ -39,11 +39,28 @@ In your storyboard, click on the image view and change its subclass to `CustomIm
 <img width="500" alt="Xcode" src="/menu/collection-view/attachments/collection-view-custom-view.png">
 
 Head to your CustomImageView.h and import Abstract Layer instead of UIKit
-`#import <AbstractLayer/ALImageView.h>`
+
+```Swift
+import AbstractLayer
+```
+
+```Objective-C
+#import <AbstractLayer/ALImageView.h>
+```
 
 Head to your CustomImageView.m and override layoutSubviews with the code that adds a red border
 
-```objective-c
+```Swift
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    let redColor = UIColor.red
+    layer.borderColor = redColor.cgColor
+    layer.borderWidth = 4.0
+  }
+```
+
+```Objective-C
 - (void)layoutSubviews {
   [super layoutSubviews];
    
@@ -59,7 +76,26 @@ That's it. Just run your project, and see for yourself!
 Assume you want to have a collection with alternate row colors (First row with white background, second with blue, third with white, and so on).
 This is exactly the same way you would do it without Abstract Layer. Simply set one of your objects as the datasource of `ALCollectionView` and implement the following method:
 
-```objective-c
+```Swift  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.cellForItem(at: indexPath)
+    
+    if indexPath.row % 2 == 0 {
+      cell?.contentView.backgroundColor = UIColor.blue
+    } else {
+      cell?.contentView.backgroundColor = UIColor.white
+    }
+    
+    return cell!
+  }
+  
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    let items = collectionView.numberOfItems(inSection: section)
+    return items
+  }
+```
+
+```Objective-C
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
  
   UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
@@ -71,17 +107,34 @@ This is exactly the same way you would do it without Abstract Layer. Simply set 
   }
   return cell;
 }
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	return [collectionView numberOfItemsInSection:section];
+}
 ```
 
 > **Notice**: Instead of calling `dequeueReusableCellWithIdentifier:` to get an empty cell, call `cellForRowAtIndexPath` to get the cell with all data inside.
 Now, feel free to modify anything within the cell, and make sure you return it. It's as simple as that.
 
+> **Notice**: If you want to modify `cellForItemAtIndexPath` then you must also copy/paste `numberOfItemsInSection` to fully conform to the `dataSource` protocol.
+> 
 ## Re-order cells
 Just like what you saw in the previous example, you can implement any delegate or datasource method to achieve custom results.
 For example, if you want to integrate re-ordering, that is done automatically as soon as you allow it.
 To allow re-ordering, use this code:
 
-```objective-c
+```Swift
+func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    collectionView.moveItem(at: sourceIndexPath, to: destinationIndexPath)
+  // Do any custom wrok here
+  }
+```
+
+```Objective-C
 - (void)collectionView:(UIcollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
   [collectionView moveItemAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
   // Do any custom wrok here
@@ -93,7 +146,11 @@ After that, implement any extra customization code.
 ## Pass data between view controllers
 `ALCollectionView` has an `array` property, which is an array of dictionary of the JSON object. Just pass the portion of data you need and use it in other View Controllers.
 
-```objective-c
+```Swift
+collectionview.array
+```
+
+```Objective-C
 self.collectionview.array
 ```
 
@@ -101,6 +158,12 @@ self.collectionview.array
 To add your custom work for when the table is going to load or after loading items, simply conform to the delegate `<ALCollectionViewLoadingDelegate>` in `ALCollectionView` and implement the any of the optional methods:
 
 This delegate provides two optional protocols for will/did load.
+
+```Swift
+func willLoadCollectionView()
+  
+func didLoadCollectionViewWithError(_ error: Error!)
+```
 
 ```Objective-C
 - (void)willLoadCollectionView;
@@ -111,6 +174,10 @@ This delegate provides two optional protocols for will/did load.
 Set `loadingDelegate` to one of your classes, then implement any of those methods accordingly.
 
 Example:
+
+```Swift
+collectionview.loadingDelegate = self
+``` 
 
 ```Objective-C
 self.collectionview.loadingDelegate = self;

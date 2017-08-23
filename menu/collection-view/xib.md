@@ -24,4 +24,4 @@ Abstract Layer supports lots of features on the `ALCollectionView`, so make sure
 * [Loader & pull to refresh](/menu/collection-view/loader)
 * [Authentication](/menu/collection-view/authentication)
 
-As for customizability, we dedicated a [whole section](/menu/collection-view/custom-cases) for it.
+As for customizability, Abstract Layer has [dedicated section](/menu/collection-view/custom-cases) for it.

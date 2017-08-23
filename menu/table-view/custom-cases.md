@@ -38,11 +38,28 @@ We'll go with the second option, since it involves modifying a Abstract Layer co
 <img width="600" alt="Xcode" src="../menu/table-view/attachments/table-view-custom-attribute.png">
 
 * Head to `CustomImageView.h` and import Abstract Layer instead of UIKit 
-`#import <AbstractLayer/ALImageView.h>`
+
+```Swift
+import AbstractLayer
+```
+
+```Objective-C
+#import <AbstractLayer/ALImageView.h>
+```
 
 * Head to your CustomImageView.m and override layoutSubviews with the code that adds a red border
 
-```objective-c
+```Swift
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    let redColor = UIColor.red
+    layer.borderColor = redColor.cgColor
+    layer.borderWidth = 4.0
+  }
+```
+
+```Objective-C
 - (void)layoutSubviews {
   [super layoutSubviews];
    
@@ -54,9 +71,28 @@ That's it. Just run your project, and see for yourself!
 
 ## Conditionals
 Assume you want to have a table with alternate row colors (First row with white background, second with blue, third with white, and so on).
+
 This is exactly the same way you would do it without Abstract Layer. Simply set one of your objects as the datasource of `ALTableView` and implement the following method:
 
-```objective-c
+```Swift
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.cellForRow(at: indexPath)
+    
+    if indexPath.row % 2 == 0 {
+      cell?.contentView.backgroundColor = UIColor.blue
+    } else {
+      cell?.contentView.backgroundColor = UIColor.white
+    }
+    return cell!
+  }
+  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    let rows = tableView.numberOfRows(inSection: section)
+    return rows
+  }
+```
+
+```Objective-C
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  
   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -68,17 +104,30 @@ This is exactly the same way you would do it without Abstract Layer. Simply set 
   }
   return cell;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	NSInteger rows = [tableview numberOfRowsInSection:section];
+	return rows;
+}
 ```
 
 > **Notice**: Instead of calling `dequeueReusableCellWithIdentifier:` to get an empty cell, call `cellForRowAtIndexPath` to get the cell with all data inside.
 Now, feel free to modify anything within the cell, and make sure you return it. It's as simple as that.
+
+> **Notice**: If you want to modify `cellForRowAtIndexPath` then you must also copy/paste `numberOfRowsInSection` to fully conform to the `dataSource` protocol.
 
 ## Edit/Delete
 Just like what you saw in the previous example, you can implement any delegate or datasource method to achieve custom results.
 
 For example, if you want to integrate re-ordering or deleting cells, all of that is done automatically as soon as you allow it.
 
-```objective-c
+```Swift
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+```
+
+```Objective-C
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
   return YES;
 }
@@ -86,7 +135,17 @@ For example, if you want to integrate re-ordering or deleting cells, all of that
 
 Abstract Layer will handle deleting the cell with animation from the UI, you just need to implement any extra actions like sending a new request to delete that specific object or re-order it.
 
-```objective-c
+```Swift
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let table = tableView as! ALTableView
+      table.commit(.delete, forRowAt: indexPath)
+      // Send an API to delete the item from the server
+    }
+  }
+```
+
+```Objective-C
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     [tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
@@ -97,7 +156,14 @@ Abstract Layer will handle deleting the cell with animation from the UI, you jus
 
 To allow re-ordering, use this code:
 
-```objective-c
+```Swift
+  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
+    // Do any custom work
+  }
+```
+
+```Objective-C
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
   [tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
   // Do any custom work
@@ -109,7 +175,11 @@ After that, implement any extra customization code.
 ## Pass data between view controllers
 `ALTableView` has an `array` property, which is an array of dictionary of the JSON object. Just pass the portion of data you need and use it in other View Controllers.
 
-```objective-c
+```Swift
+tableview.array
+```
+
+```Objective-C
 self.tableview.array
 ```
 
@@ -117,6 +187,12 @@ self.tableview.array
 To add your custom work for when the table is going to load or after loading items, simply conform to the delegate `<ALTableViewLoadingDelegate>` in `ALTableView` and implement the any of the optional methods:
 
 This delegate provides two optional protocols for will/did load.
+
+```Swift
+func willLoadTableView()
+
+func didLoadTableViewWithError(_ error: Error!)
+```
 
 ```Objective-C
 - (void)willLoadTableView;
@@ -127,6 +203,10 @@ This delegate provides two optional protocols for will/did load.
 Set `loadingDelegate` to one of your classes, then implement any of those methods accordingly.
 
 Example:
+
+```Swift
+tableView.loadingDelegate = self
+```
 
 ```Objective-C
 self.tableView.loadingDelegate = self;
