@@ -9,6 +9,12 @@
 UITableViewCell & UICollectionViewCell are left untouched. You can simply subclass them and link your UI elements, just like what you used to do.
 Inside `awakeFromNib` in your subclass, do any UI changes programatically.
 
+```Swift
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
+```
+
 ```Objective-C
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -26,25 +32,44 @@ You have full access to both the UI elements in the cell, and to the JSON array.
 The recommended way is doing it in `cellForRowAtIndex`.
 The only difference is, you should call:
 
+```Swift
+let cell = tableView.cellForRow(at:indexPath)
+```
+
 ```Objective-C
-UITableViewCell ###cell = [tableView cellForRowAtIndexPath:indexPath];
+UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 ```
 instead of calling:
 
+``` Swift
+let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+```
+
 ```Objective-C
-UITableViewCell ###cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 ```
 
 Which will return the final cell that has all the data inside.
 Now, you can change any value you need.
 
+```Swift
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
+    var price = Float(cell.priceLabel?.text ?? "") // Price in USD
+    price = price! * 0.85 // Convert to EUR
+    cell.priceLabel?.text = String(describing: price) // Set new value
+    
+    return cell
+  }
+```
+
 ```Objective-C
-- (UITableViewCell ###)tableView:(UITableView ###)tableView cellForRowAtIndexPath:(NSIndexPath ###)indexPath {
-  CustomTableViewCell ###cell = [tableView cellForRowAtIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath ###)indexPath {
+  CustomTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
   
   // Convert from USD to EUR
   CGFloat price = cell.priceLabel.text.floatValue; // Price in USD
-  price = price ### 0.85; // Convert to EUR
+  price = price * 0.85; // Convert to EUR
   cell.priceLabel.text = [NSString stringWithFormat:@"%.2f",price]; // Set new value
   
   return cell;
@@ -65,30 +90,41 @@ You can simply set the delegate or datasource of `ALTableView` or `ALCollectionV
 
 Table View:
 
+```Swift
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    let table = tableView as! ALTableView
+    return table.heightForRow(at: indexPath)
+  }
+```
+
 ```Objective-C
-- (CGFloat)tableView:(UITableView ###)tableView heightForRowAtIndexPath:(NSIndexPath ###)indexPath {
-  return [(ALTableView ###)tableView heightForRowAtIndexPath:indexPath];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return [(ALTableView *)tableView heightForRowAtIndexPath:indexPath];
 }
 ```
 
-Collection View:
-
-```Objective-C
-- (CGSize)collectionView:(UICollectionView ###)collectionView layout:(UICollectionViewLayout ###)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath ###)indexPath {
-  return [(ALCollectionView ###)collectionView sizeForItemAtIndexPath:indexPath];
-}
-```
 **DataSource:** If you set your own class to be the dataSource, make sure you also copy/paste these method:
 
 Table View:
 
+```Swift
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return tableView.numberOfRows(inSection: section)
+  }
+  
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.cellForItem(at: indexPath)
+    return cell!
+  }
+```
+
 ```Objective-C
-- (NSInteger)tableView:(UITableView ###)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return [tableView numberOfRowsInSection:section];
 }
 
-- (UITableViewCell ###)tableView:(UITableView ###)tableView cellForRowAtIndexPath:(NSIndexPath ###)indexPath {
-  UITableViewCell ###cell = [tableView cellForRowAtIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
   // Optional: Add your custom code here
   return cell;
 }
@@ -96,13 +132,25 @@ Table View:
 
 Collection View:
 
+```Swift
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    let items = collectionView.numberOfItems(inSection: section)
+    return items
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.cellForItem(at: indexPath)
+    return cell!
+  }
+```
+
 ```Objective-C
-- (NSInteger)collectionView:(UICollectionView ###)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
   return [collectionView numberOfItemsInSection:section];
 }
 
-- (UICollectionViewCell ###)collectionView:(UICollectionView ###)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath ###)indexPath {
-  UICollectionViewCell ###cell = [collectionView cellForItemAtIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+  UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
   // Optional: Add your custom code here
   return cell;
 }
@@ -118,6 +166,12 @@ Each delegate provides two optional protocols for will/did load.
 
 Table View:
 
+```Swift
+func willLoadTableView()
+
+func didLoadTableViewWithError(_ error: Error!)
+```
+
 ```Objective-C
 - (void)willLoadTableView;
 
@@ -126,19 +180,33 @@ Table View:
 
 Collection View:
 
+```Swift
+func willLoadCollectionView()
+  
+func didLoadCollectionViewWithError(_ error: Error!)
+```
+
 ```Objective-C
 - (void)willLoadCollectionView;
-
-- (void)didLoadCollectionViewWithError:(NSError *)error;
 ```
+
+func didLoadTableViewWithError(_ error: Error!)
 Set `loadingDelegate` to one of your classes, then implement any of those methods accordingly.
 
 Example:
+
+```Swift
+tableView.loadingDelegate = self
+``` 
 
 ```Objective-C
 self.tableView.loadingDelegate = self;
 ``` 
 And
+
+```Swift
+collectionView.loadingDelegate = self
+``` 
 
 ```Objective-C
 self.collectionView.loadingDelegate = self;
@@ -171,11 +239,19 @@ Each delegate provides an optional protocols to know when your view loads.
 
 Table View:
 
+```Swift
+func didLoadTableViewWithError(_ error: Error!)
+```
+
 ```Objective-C
 - (void)didLoadTableViewWithError:(NSError *)error;
 ```
 
 Collection View:
+
+```Swift
+func didLoadCollectionViewWithError(_ error: Error!)
+```
 
 ```Objective-C
 - (void)didLoadCollectionViewWithError:(NSError *)error;
@@ -192,6 +268,11 @@ Otherwise, you can print out the `error.localizedString` to check for the error 
 **Yes.**
 
 Within your `ALTableView` or `ALCollectionView` instance, there's a property called `array`. This represents the parsed array of models that populates your view.
+
+```Swift
+collectionView.array
+tableView.array
+```
 
 ```Objective-C
 self.collectionView.array
@@ -231,6 +312,14 @@ Just implement each one by setting its attribute from the attribute inspector, a
 Within your `ALTableView` or `ALCollectionView` instance, there's a property called `array`. This represents the parsed array of models that populates your view.
 
 For example, here's how you push the data of the cell the user has just tapped:
+
+```Swift
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let table = tableView as! ALTableView
+    let item = table.array[indexPath.row]
+    // You're good to go.
+  }
+```
 
 ```Objective-C
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -278,6 +367,21 @@ Simply, click on the table view inside the `UITableViewController` that you drag
 
 Copy/paste the following methods, and you'll be set. Abstract Layer handle deleting the cells and their corresponding data from the datasource.
 
+```Swift
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+```
+
+```Swift
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let table = tableView as! ALTableView
+      table.commit(.delete, forRowAt: indexPath)
+    }
+  }
+```
+  
 ```Objective-C
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
@@ -345,6 +449,12 @@ Abstract layer will automatically display each in a section, and load the conten
 
 Add the following method to your datasource class:
 
+```Swift
+  func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+```
+
 ```Objective-C
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
@@ -352,6 +462,13 @@ Add the following method to your datasource class:
 ```
 
 And 
+
+```Swift  
+  func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    collectionView.moveItem(at: sourceIndexPath, to: destinationIndexPath)
+    // Do your custom work
+  }
+```
 
 ```Objective-C
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
@@ -371,6 +488,11 @@ The benefit of having a base URL is to be able to switch in one place so that it
 This is useful when switching between development and release environments.
 
 To acheive that, add the following code in the class that handles networking or constants.
+
+```Swift
+let baseURL = "http://localhost:8888"
+ALStore.sharedInstance().setValue(baseURL, forKey: "baseURL")
+```
 
 ```Objective-C
 [[ALStore sharedInstance] setValue:@"http://localhost:8888" forKey:@"baseURL"];
@@ -393,6 +515,10 @@ This will automatically be translated to:
 To acheive a Pineterest-like UI, you only have to provide the height of the collection view cell, and Abstract Layer will automatically handles sizing and viewing of a coherent-looking collection view.
 
 Implement this method in your datasource class:
+
+```Swift
+  func collectionView(_ collectionView: UICollectionView!, heightForItemAt indexPath: IndexPath!, itemInfo item: [AnyHashable : Any]!) -> CGFloat
+```
 
 ```Objective-C
 - (CGFloat)collectionView:(UICollectionView *)collectionView heightForItemAtIndexPath:(NSIndexPath *)indexPath itemInfo:(NSDictionary *)item;
@@ -446,11 +572,19 @@ Each delegate provides an optional protocols to know when your view loads.
 
 Table View:
 
+```Swift
+func didLoadTableViewWithError(_ error: Error!)
+```
+
 ```Objective-C
 - (void)didLoadTableViewWithError:(NSError *)error;
 ```
 
 Collection View:
+
+```Swift
+func didLoadCollectionViewWithError(_ error: Error!)
+```
 
 ```Objective-C
 - (void)didLoadCollectionViewWithError:(NSError *)error;
@@ -471,11 +605,19 @@ Each delegate provides an optional protocols to know when your view loads.
 
 Table View:
 
+```Swift
+func didLoadTableViewWithError(_ error: Error!)
+```
+
 ```Objective-C
 - (void)didLoadTableViewWithError:(NSError *)error;
 ```
 
 Collection View:
+
+```Swift
+func didLoadCollectionViewWithError(_ error: Error!)
+```
 
 ```Objective-C
 - (void)didLoadCollectionViewWithError:(NSError *)error;
