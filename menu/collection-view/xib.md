@@ -4,19 +4,24 @@
 
 You might have your good reasons to use XIB over storyboard in prototyping a cell. That's totally fine.
 
-Create your XIB file and design a prototype cell.
+* Create your XIB file and design a prototype cell.
 
-<img width="200" alt="Xcode" src="/menu/collection-view/attachments/collection-view-xib-class.png">
+<img width="600" alt="Xcode" src="../menu/collection-view/attachments/collection-view-xib.png">
 
-<img width="600" alt="Xcode" src="/menu/collection-view/attachments/collection-view-xib-view.png">
+* Add the file name in your collection view's attribute inspector.
 
-Don't forget to set the identifier to `cell`.
+<img width="600" alt="Xcode" src="../menu/collection-view/attachments/collection-view-xib-xcode.png">
 
-Add the file name in your collection view's attribute inspector.
+* Run your app, and there you go!
 
-<img width="600" alt="Xcode" src="/menu/collection-view/attachments/collection-view-xib-attribute.png">
+### Where to go next?
 
-Run your app, and there you go.
+Abstract Layer supports lots of features on the `ALCollectionView`, so make sure to check the rest out!
 
-## Where to go next?
-Check out the other collectionView tutorials like [Authentication](/menu/collection-view/authentication) & [Custom cases](/menu/collection-view/custom-cases).
+* [Parameters](/menu/collection-view/parameters)
+* [Pagination](/menu/collection-view/pagination)
+* [Parsing](/menu/collection-view/parsing)
+* [Loader & pull to refresh](/menu/collection-view/loader)
+* [Authentication](/menu/collection-view/authentication)
+
+As for customizability, we dedicated a [whole section](/menu/collection-view/custom-cases) for it.
