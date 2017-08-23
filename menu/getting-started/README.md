@@ -40,6 +40,28 @@ After purchasing a license, you will recieve a personal key to use in your proje
 To get your free tiral license key, email us at <a href="mailto:support@abstractlayer.com?Subject=Free%20Trial%20Key%20Request" target="_top">support@asbtractlayer.com</a>
 </p>
 
+### Set license key
+
+* Go to `info.plist` and add a new entry with key `AbstractLayer`
+* Set its type to `Dictionary`
+* Add a new key/value pair
+* Set the key to `Key`
+* Set the value to your license key
+
+<img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-key.png">
+
+Raw format:
+```xml
+	<key>AbstractLayer</key>
+	<dict>
+		<key>Key</key>
+		<string>0B3Hwd79FbAvwesY6/xHNQnHVOinJdse23jKaE4=</string>
+	</dict>
+```
+
+> The provided key in this example is just a sample. You should insert your won key instead
+
+
 ### Show me the magic
 As soon as you integrate the framework within your project, `UIKit` classes like `UITableView` and `UICollectionView` will acquire extra powers, that is more attributes in the Attributes Inspector.
 
