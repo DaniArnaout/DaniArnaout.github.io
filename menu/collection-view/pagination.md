@@ -33,4 +33,4 @@ Abstract Layer supports lots of features on the `ALCollectionView`, so make sure
 * [XIB](/menu/collection-view/xib)
 * [Authentication](/menu/collection-view/authentication)
 
-As for customizability, Abstract Layer has [dedicated section](/menu/collection-view/custom-cases) for it.
+As for customizability, Abstract Layer has a [dedicated section](/menu/collection-view/custom-cases) for it.

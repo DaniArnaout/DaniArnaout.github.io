@@ -34,4 +34,4 @@ Abstract Layer supports lots of features on the `ALTableView`, so make sure to c
 * [XIB](/menu/table-view/xib)
 * [Authentication](/menu/table-view/authentication)
 
-As for customizability, Abstract Layer has [dedicated section](/menu/table-view/custom-cases) for it.
+As for customizability, Abstract Layer has a [dedicated section](/menu/table-view/custom-cases) for it.

@@ -20,7 +20,7 @@
 
 ### Install framework
 
-4. <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayer%20v1.0.zip">Download Abstract Layer framework.</a> (Installation via Coacoapods will be available soon)
+4. <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.zip">Download Abstract Layer framework.</a> (Installation via Coacoapods will be available soon)
 5. Unzip it, and drag `AbstractLayer.framework` into your project and make sure `Copy items if needed` is checked
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-framework.png">

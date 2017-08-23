@@ -1,6 +1,8 @@
 # Collection View
 > Learn how to populate a native `UICollectionView` from an API without the need to write code!
 
+> Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/collection-view/Marketplace.zip">final project</a>
+
 You're building the conversations screen in a chat app.
 
 **Designer**: Here's a screenshot
@@ -128,6 +130,27 @@ From the menu bar choose "Editor" → "Embed in" → "Navigation Controller"
 
 This is just the way you build any UI, the next part is where the magic happens!
 
+> **NOTE:** The API doesn't uses https, so you must exculde this domain by adding `App Transport Layer` key to your `info.plist`
+
+<img width="500" alt="Table view" src="/menu/collection-view/attachments/app-transport-layer.png">
+
+Raw value:
+```xml
+<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>abstractlayer.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+```
+
 ### Magic (Auto data-binding)
 
 Follow these steps to bind data between the JSON document that you have and the respective UI elements.
@@ -185,6 +208,8 @@ You got your collection view fully designed and populated without writing a sing
 
 ### Where to go next?
 
+> Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/collection-view/Marketplace.zip">final project</a> and try it out
+
 Abstract Layer supports lots of features on the `ALCollectionView`, so make sure to check them all out!
 
 * [Parameters](/menu/collection-view/parameters)
@@ -194,4 +219,4 @@ Abstract Layer supports lots of features on the `ALCollectionView`, so make sure
 * [XIB](/menu/collection-view/xib)
 * [Authentication](/menu/collection-view/authentication)
 
-As for customizability, we dedicated a [whole section](/menu/collection-view/custom-cases) for it.
+As for customizability, Abstract Layer has a [dedicated section](/menu/collection-view/custom-cases) for it.

@@ -4,11 +4,11 @@ There are 3 levels of console logs in Abstract Layer.
 
 * **Debug**: Logs out everything that Abstract Layer is doing under the hood. 
 
-Example:  Abstract Layer <DEBUG> URL: http://localhost:8888/v3/getNearbyProducts
+***Example:  &lt;DEBUG&gt; [AbstractLayer/URL] http://localhost:8888/v3/getNearbyProducts***
 
 * **Error**: Only logs out errors. 
 
-Example: Abstract Layer <ERROR> TableView: Could not connect to the server.
+***Example: &lt;ERROR&gt; [AbstractLayer/CollectionView] Could not connect to the server.***
 
 * **Nothing**: Logs out nothing
 
