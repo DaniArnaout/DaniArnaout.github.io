@@ -54,7 +54,7 @@ That's it. Just run your project, and see for yourself!
 
 ## Conditionals
 Assume you want to have a table with alternate row colors (First row with white background, second with blue, third with white, and so on).
-This is exactly the same way you would do it without Abstract Layer. Simply override
+This is exactly the same way you would do it without Abstract Layer. Simply set one of your objects as the datasource of `ALTableView` and implement the following method:
 
 ```objective-c
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
