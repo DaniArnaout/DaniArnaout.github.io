@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>UIImageView(Inspectable) Category Reference</title>
+    <title>ALDateLabel Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/objc/Extension/UIImageView(Inspectable)" class="dashAnchor"></a>
-    <a title="UIImageView(Inspectable) Category Reference"></a>
+    <a name="//apple_ref/objc/Class/ALDateLabel" class="dashAnchor"></a>
+    <a title="ALDateLabel Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        UIImageView(Inspectable) Category Reference
+        ALDateLabel Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -91,14 +91,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>UIImageView(Inspectable)</h1>
+            <h1>ALDateLabel</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">UIImageView</span> <span class="p">(</span><span class="nl">Inspectable</span><span class="p">)</span></code></pre>
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">ALDateLabel</span> <span class="p">:</span> <span class="nc"><a href="../Classes/ALLabel.html">ALLabel</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Inspectable is a public category on UIImageView with convenience properties to help adjust the looks of the image view all the way from a cornder radius to a complete circual look.</p>
+            <p><code>ALDateLabel</code> is a subclass of <code><a href="../Classes/ALLabel.html">ALLabel</a></code> with convenience properties to help display dates parsed from timestamps in any desired format complying with <code>UIDateFormatter</code> standards.</p>
 
           </section>
           <section class="section task-group-section">
@@ -107,9 +107,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)UIImageView(py)circular"></a>
-                    <a name="//apple_ref/objc/Property/circular" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)UIImageView(py)circular">circular</a>
+                    <a name="/c:objc(cs)ALDateLabel(py)inputFormat"></a>
+                    <a name="//apple_ref/objc/Property/inputFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ALDateLabel(py)inputFormat">inputFormat</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -117,23 +117,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Turn on if you want the image view to become circular</p>
+                        <p>The date format of the date received from JSON response according to the standard <code>UIDateFormatter</code></p>
 
-<p>AbstractLayer will set the corner radius to half the width of the image view to achieve a ciruclar image</p>
-
-<p>Default is NO.</p>
+<p>Use this property if you wish to format your JSOn date into one of the available <code>UIDateFormatter</code> formats.
+Ex: <q>yyyy-MM-dd HH:mm a</q>
+Ex: <q>EEE MMM dd HH:mm:ss ZZZ yyyy</q>
+Default value is EPOC timestamp.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">circular</span><span class="p">;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">inputFormat</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">circular</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">inputFormat</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -143,9 +144,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)UIImageView(py)cornerRadius"></a>
-                    <a name="//apple_ref/objc/Property/cornerRadius" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)UIImageView(py)cornerRadius">cornerRadius</a>
+                    <a name="/c:objc(cs)ALDateLabel(py)outputFormat"></a>
+                    <a name="//apple_ref/objc/Property/outputFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ALDateLabel(py)outputFormat">outputFormat</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -153,21 +154,56 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Set this to any value above 0 to give your image view a corner radius</p>
+                        <p>The date format of the label you want to dispaly according to the standard <code>UIDateFormatter</code></p>
 
-<p>Default is 0.</p>
+<p>Use this property if you wish to format your label into one of the available <code>UIDateFormatter</code> formats.
+Ex: <q>yyyy-MM-dd HH:mm a</q>
+Ex: <q>EEE MMM dd HH:mm:ss ZZZ yyyy</q>
+Default value is <q>EEE MMM dd HH:mm:ss ZZZ yyyy</q>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSUInteger</span> <span class="n">cornerRadius</span><span class="p">;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">outputFormat</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">UInt</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">outputFormat</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ALDateLabel(py)date"></a>
+                    <a name="//apple_ref/objc/Property/date" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ALDateLabel(py)date">date</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Represents the date that the label is displaying</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSDate</span> <span class="o">*</span><span class="n">date</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

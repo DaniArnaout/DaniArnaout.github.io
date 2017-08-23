@@ -1,5 +1,5 @@
-cd /Users/daniarnaout/Documents/Work/Codepack/Development/codepack-ios/Codepack/Codepack
+cd /Users/dani/Documents/Work/AbstractLayer/Development/codepack-ios/Codepack/Codepack
 
-jazzy --objc --umbrella-header Codepack.h --framework-root . --sdk iphonesimulator --author Codepack --author_url http://usecodepack.com  —module-version 1.0
+jazzy --objc --umbrella-header AbstractLayer.h --framework-root . --sdk iphonesimulator --author AbstractLayer --author_url https:abstractlayer.com  —module-version 1.0
 
 

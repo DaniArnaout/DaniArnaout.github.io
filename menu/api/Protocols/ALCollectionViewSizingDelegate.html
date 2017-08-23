@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ALCollectionViewSizingDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Protocol/ALCollectionViewSizingDelegate" class="dashAnchor"></a>
+    <a title="ALCollectionViewSizingDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ALCollectionViewSizingDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/UIImageView(Inspectable).html">UIImageView(Inspectable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ALCollectionView.html">ALCollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ALDateLabel.html">ALDateLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ALImageView.html">ALImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ALLabel.html">ALLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ALStore.html">ALStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ALTableView.html">ALTableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@AbstractLayerVersionNumber">AbstractLayerVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@AbstractLayerVersionString">AbstractLayerVersionString</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ALCollectionViewLoadingDelegate.html">ALCollectionViewLoadingDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ALCollectionViewSizingDelegate.html">ALCollectionViewSizingDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ALImageViewLoadingDelegate.html">ALImageViewLoadingDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ALTableViewLoadingDelegate.html">ALTableViewLoadingDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ALCollectionViewSizingDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">ALCollectionViewSizingDelegate</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>ALCollectionViewSizingDelegate</code> is a protocol that provide methods for the sizing of the collection view.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)ALCollectionViewSizingDelegate(im)collectionView:heightForItemAtIndexPath:itemInfo:"></a>
+                    <a name="//apple_ref/objc/Method/-collectionView:heightForItemAtIndexPath:itemInfo:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)ALCollectionViewSizingDelegate(im)collectionView:heightForItemAtIndexPath:itemInfo:">-collectionView:heightForItemAtIndexPath:itemInfo:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement this method only if you&rsquo;re using Dynamic Height. Width will be automatically calculated by setting Columns property</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nf">collectionView</span><span class="p">:(</span><span class="n">UICollectionView</span> <span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span>
+    <span class="nf">heightForItemAtIndexPath</span><span class="p">:(</span><span class="n">NSIndexPath</span> <span class="o">*</span><span class="p">)</span><span class="nv">indexPath</span>
+                    <span class="nf">itemInfo</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="o">!</span><span class="p">,</span> <span class="n">heightForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="o">!</span><span class="p">,</span> <span class="n">itemInfo</span> <span class="nv">item</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The collection view object</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index path of item being displayed</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A dictionary with all JSON keys/values</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)ALCollectionViewSizingDelegate(im)lineSpacingForDevice:orientation:"></a>
+                    <a name="//apple_ref/objc/Method/-lineSpacingForDevice:orientation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)ALCollectionViewSizingDelegate(im)lineSpacingForDevice:orientation:">-lineSpacingForDevice:orientation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement this method if you wish to achieve different line spacing for different devices or orientations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nf">lineSpacingForDevice</span><span class="p">:(</span><span class="n">UIUserInterfaceIdiom</span><span class="p">)</span><span class="nv">device</span>
+                    <span class="nf">orientation</span><span class="p">:(</span><span class="n">UIDeviceOrientation</span><span class="p">)</span><span class="nv">orientation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">lineSpacing</span><span class="p">(</span><span class="n">forDevice</span> <span class="nv">device</span><span class="p">:</span> <span class="kt">UIUserInterfaceIdiom</span><span class="p">,</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>device</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current user device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>orientation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current device orientation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)ALCollectionViewSizingDelegate(im)interitemSpacingForDevice:orientation:"></a>
+                    <a name="//apple_ref/objc/Method/-interitemSpacingForDevice:orientation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)ALCollectionViewSizingDelegate(im)interitemSpacingForDevice:orientation:">-interitemSpacingForDevice:orientation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement this method if you wish to achieve different inter-item spacing for different devices or orientations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nf">interitemSpacingForDevice</span><span class="p">:(</span><span class="n">UIUserInterfaceIdiom</span><span class="p">)</span><span class="nv">device</span>
+                         <span class="nf">orientation</span><span class="p">:(</span><span class="n">UIDeviceOrientation</span><span class="p">)</span><span class="nv">orientation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">interitemSpacing</span><span class="p">(</span><span class="n">forDevice</span> <span class="nv">device</span><span class="p">:</span> <span class="kt">UIUserInterfaceIdiom</span><span class="p">,</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>device</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current user device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>orientation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current device orientation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)ALCollectionViewSizingDelegate(im)insetForForDevice:orientation:"></a>
+                    <a name="//apple_ref/objc/Method/-insetForForDevice:orientation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)ALCollectionViewSizingDelegate(im)insetForForDevice:orientation:">-insetForForDevice:orientation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implement this method if you wish to achieve different inset spacing for different devices or orientations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">UIEdgeInsets</span><span class="p">)</span><span class="nf">insetForForDevice</span><span class="p">:(</span><span class="n">UIUserInterfaceIdiom</span><span class="p">)</span><span class="nv">device</span>
+                      <span class="nf">orientation</span><span class="p">:(</span><span class="n">UIDeviceOrientation</span><span class="p">)</span><span class="nv">orientation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">insetFor</span><span class="p">(</span><span class="n">forDevice</span> <span class="nv">device</span><span class="p">:</span> <span class="kt">UIUserInterfaceIdiom</span><span class="p">,</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIDeviceOrientation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIEdgeInsets</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>device</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current user device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>orientation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current device orientation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https:abstractlayer.com" target="_blank" rel="external">AbstractLayer</a>. All rights reserved. (Last updated: 2017-08-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
