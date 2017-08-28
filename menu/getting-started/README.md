@@ -20,7 +20,7 @@
 
 ### Install framework
 
-4. <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.zip">Download Abstract Layer framework.</a> (Installation via Coacoapods will be available soon)
+4. <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.zip">Download Abstract Layer framework.</a> (Installation via `Cocoaapods` will be available soon)
 5. Unzip it, and drag `AbstractLayer.framework` into your project and make sure `Copy items if needed` is checked
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-framework.png">
@@ -31,7 +31,9 @@
 
 7. Delete `AbstractLayer.framework` from `Linked Frameworks and Libraries`
 
-8. Tap (plus) sign in `Embedded Binaries` section, and add `AbstractLayer.framework` there
+8. Tap (plus) sign in `Embedded Binaries` section, and add `AbstractLayer.framework` there. 
+
+> The framework will now appear in both `Embedded Binaries` and `Linked Frameworks and Libraries`
 
 ### Get license key
 

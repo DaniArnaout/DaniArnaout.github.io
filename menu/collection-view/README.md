@@ -1,18 +1,12 @@
 # Collection View
 > Learn how to populate a native `UICollectionView` from an API without the need to write code!
 
-> Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/collection-view/Marketplace.zip">final project</a>
+You're building a marketplace app. Here's the design & API:
 
-You're building the conversations screen in a chat app.
-
-**Designer**: Here's a screenshot
-
-<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-done.png">
-
-**Backend Engineer**: Here's the [API](http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json). 
+**API URL**: [http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json](http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json). 
 
 <details>
-  <summary>Click the arrow to check out the full JSON response</summary>
+  <summary>Click here to check out the full JSON response</summary>
 
     <pre><code>
 [
@@ -81,6 +75,8 @@ You're building the conversations screen in a chat app.
 ]    </code></pre>
 </details>
 
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-done.png">
+
 ## The old way
 
 Normally, you would do the following:
@@ -111,9 +107,9 @@ If you haven't already added the framework to your Xcode project, follow [this t
 * Open `Main.storyaboard` and delete the default View Controller you see
 
 * Drag an instance of `UICollectionViewController`
-From the menu bar choose "Editor" → "Embed in" → "Navigation Controller"
+From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
 
-* Select your Navigation Controller and mark it as `Is initial View Controller` from the attributes inspector
+* Click on your navigation controller then check the box that says `Is initial View Controller` from the attributes inspector
 
 <img width="800" alt="Collection view" src="/menu/Collection-view/attachments/collection-view-main-initial.png">
 
@@ -155,8 +151,7 @@ Raw value:
 
 Follow these steps to bind data between the JSON document that you have and the respective UI elements.
 
-* Open up your [API](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) in a browser and take a look at the format & keys. It's an array of conversations, each with the following keys:
-	* id
+* Open the URL [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) in a browser and take a look at the format & keys. It's an array of conversations, each with the following keys:
 	* price
 	* image_url
 	* name
@@ -174,7 +169,7 @@ Setup your collection view attributes by doing the following:
 Set the number of columns to `2`
 
 * Paste the URL you just copied in the new `Url` field
-Type in `GET` for `HTTP Method`
+Type in `GET` for `HTTP Method` (which is the default method)
 
 <img width="500" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-url.png">
 

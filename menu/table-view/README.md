@@ -1,15 +1,9 @@
 # Table View
 > Learn how to populate a native `UITableView` from an API without a single line of code! 
 
-> Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/table-view/Conversations.zip">final project</a>
+You're building the conversations screen in a chat app. Here are the API and the design.
 
-You're building the conversations screen in a chat app.
-
-**Designer**: Here's a screenshot
-
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
-
-**Backend Engineer**: Here's the [API](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json). 
+**API URL**: [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json). 
 
 <details>
   <summary>Click the arrow to check out the full JSON response</summary>
@@ -88,6 +82,8 @@ You're building the conversations screen in a chat app.
 ]    </code></pre>
 </details>
 
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
+
 ## The old way
 
 Normally, you would do the following:
@@ -115,18 +111,20 @@ If you haven't already added the framework to your Xcode project, follow [this t
 
 ### Building the UI
 
-* Open `Main.storyaboard` and delete the default View Controller you see
+* Open `Main.storyaboard` and delete the default view controller
 
 * Drag an instance of `UITableViewController`
-From the menu bar choose "Editor" → "Embed in" → "Navigation Controller"
+From the menu bar choose:
 
-* Select your Navigation Controller and mark it as `Is initial View Controller` from the attributes inspector
+`Editor → Embed in → Navigation Controller`
+
+* Click on your navigation controller then check the box that says `Is initial View Controller` from the attributes inspector
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-initial.png">
 
 * Click on your prototype cell, and set the `cell identifier` to `cell` in the attributes inspector
 
-* Change the height of the cell to 80 instead of 44 by dragging the prototype cell from the bottom in your storyboard
+* Drag the prototype cell in your storyboard from the bottom to increase its height to `80`
 
 * Design the tableview's cell to match the design
 
@@ -164,8 +162,7 @@ Raw value:
 
 Follow these steps to bind data between the JSON document that you have and the respective UI elements.
 
-* Open up your [API](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) in a browser and take a look at the format & keys. It's an array of conversations, each with the following keys:
-	* id
+* Open the URL [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) in a browser and take a look at the format & keys. It's an array of conversations, each with the following keys:
 	* name
 	* image_url
 	* last_message
@@ -182,7 +179,7 @@ Setup your table view attributes by doing the following:
 * Navigate to your attributes inspector, and you'll find a couple new attributes
 
 * Paste the URL you just copied in the new `Url` field
-Type in `GET` for HTTP method
+Type in `GET` for HTTP method (Which is also the default method)
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-url.png">
 
