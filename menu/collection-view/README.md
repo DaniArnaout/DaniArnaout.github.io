@@ -1,7 +1,7 @@
 # Collection View
-> Learn how to populate a native `UICollectionView` from an API without the need to write code!
+> Populate a collection view without writing a single line of code! Just set the `URL` & `JSON keys`. 
 
-You're building a marketplace app. Here's the design & API:
+**Example**: Marketplace app
 
 **API URL**: [http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json](http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json). 
 
@@ -77,32 +77,11 @@ You're building a marketplace app. Here's the design & API:
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-done.png">
 
-## The old way
-
-Normally, you would do the following:
-
-1. Build the UI in Interface Builder
-2. Subclass your `UICollectionViewCell`
-3. Link UI elements to the `UICollectionViewCell`
-4. Create a `Product` model object with id, name, lastMessage, date, & imageUrl properties
-5. Create a network manager
-6. Build & send your `URLRequest` with URL & parameters
-7. Receive a response and check for any errors
-8. Parse the JSON response into models and check for parsing errors
-9. Bind the parsed array with all the UI elements
-10. Finally reload your `UICollectionView`!
-
-## Abstract Layer way
-
-Just set your `URL` & `JSON keys` right inside Interface Builder, and Abstract Layer will take care of everything else!
-
-Let's see how this is done!
-
 ### Integrate the framework
 
 If you haven't already added the framework to your Xcode project, follow [this tutorial](/menu/getting-started/).
 
-### Building the UI
+### Build the UI
 
 * Open `Main.storyaboard` and delete the default View Controller you see
 
@@ -117,7 +96,7 @@ From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
 
 * Change the height of the cell to 80 instead of 44 by dragging the prototype cell from the bottom in your storyboard
 
-* Design the Collectionview's cell to match the design
+* Design the collection view's cell to match the design
 
 	* `UIImageView` for `Product Image` (size 50x50)
 	* `UILabel` for `Price`  (Font size 17, semibold, white)
