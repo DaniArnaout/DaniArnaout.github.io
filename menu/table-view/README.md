@@ -128,14 +128,12 @@ From the menu bar choose:
 
 * Design the tableview's cell to match the design
 
-	* `UIImageView` for `User Image` (size 50x50)
-	* `UILabel` for `Name`  (Font size 13, semibold, black)
-	* `UILabel` for `Last Message` (Font size 12, regular, dark gray)
-	* `UILabel` for `Date` (Font size 12, regular, light gray)
+	* `UIImageView` for the user image **(size 50x50)**
+	* `UILabel` for the name label  **(Font size 13, semibold, black)**
+	* `UILabel` for the last message label **(Font size 12, regular, dark gray)**
+	* `UILabel` for the date label **(Font size 12, regular, light gray)**
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-design.png">
-
-This is just the way you build any UI, the next part is where the magic happens!
 
 > **NOTE:** The API doesn't uses https, so you must exculde this domain by adding `App Transport Layer` key to your `info.plist`
 
@@ -160,41 +158,33 @@ Raw value:
 
 ### Magic (Auto data-binding)
 
-Follow these steps to bind data between the JSON document that you have and the respective UI elements.
+It's time to bind data between the JSON document and the UI elements.
 
-* Open the URL [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) in a browser and take a look at the format & keys. It's an array of conversations, each with the following keys:
-	* name
-	* image_url
-	* last_message
-	* date
+* Open the URL in a browser [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) 
 
-Setup your table view attributes by doing the following:
+* Copy the URL
 
-* Copy the URL from the browser and head back to your storyboard
-
-* Click on your `UITableView` and change its class to `ALTableView` in the identity inspector
+* Go to your storyboard and click on your `UITableView` and change its class to `ALTableView` in the identity inspector
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cptable.png">
 
 * Navigate to your attributes inspector, and you'll find a couple new attributes
 
 * Paste the URL you just copied in the new `Url` field
-Type in `GET` for HTTP method (Which is also the default method)
+
+* Type in `GET` for HTTP method (Which is also the default method)
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-url.png">
 
 Your table view is now ready to process the API. It's time to match the `JSON keys` with the `UI elements` to fill the data automatically.
 
-* Start by modifying your `UIImageView` to display the user profile pic by doing the following:
-	* Click on your `UIImageView` and change its class to `ALImageView` in the identity inspector
+* Click on your `UIImageView` and change its class to `ALImageView` in the identity inspector
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpimage.png">
 
 * Type in `image_url` in the `Json Key` field so that Abstract Layer can automatically load the image using its URL value
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-image-url.png">
-
-* The name and last message labels are treated the same way:
 
 * Click on the name label and change its class to `ALLabel` in the identity inspector
 
@@ -206,25 +196,24 @@ Your table view is now ready to process the API. It's time to match the `JSON ke
 
 * Click on the last message label and change its class to `ALLabel` in the attributes inspector
 
-	* Type in `last_message` in the `Json Key` field
+* Type in `last_message` in the `Json Key` field
 
-* As for the date label field, it's a different class:
-
-	* Click on the date label and change its class to `ALDateLabel` in the attributes inspector
+* Click on the date label and change its class to `ALDateLabel` in the attributes inspector
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpdate.png">
 
 * Type in `timestamp` in the `Json Key` field
 
 * Type in `MM/dd/yyyy` in the `Output Format` field to get the desired date format displayed. 
-<br>
-*The format should abide by [DateFormatter's](https://developer.apple.com/documentation/foundation/dateformatter) rules*
+
+> The format should abide by [Apple's DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter) rules
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-format.png">
 
 * Run the project, and there you go! MAGIC!
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
+ 
 
 You got your table view fully designed and populated without writing a single line of code!
 

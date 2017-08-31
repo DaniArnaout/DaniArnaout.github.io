@@ -171,9 +171,101 @@ Type in `price` in the `Json Key` field to automatically match the JSON value wi
 
 Run the project, and there you go! MAGIC!
 
-<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-done.png">
+## Hold on
 
-You got your collection view fully designed and populated without writing a single line of code!
+This looks great so far, but we're sure you've got many questions about how far can Absract Layer go. 
+
+The answer is: **VERY!**
+
+Check out this example to see for yourself.
+
+### Convert label price from USD to EUR
+
+> Remember: `ALColletionView` is a subclass of `UICollectionView`
+
+> Remember: You have FULL access to the data parsed by accessing the `array` property on your collection view
+
+How to do it:
+
+1- Subclass `UICollectionViewCell` and link the price label
+
+2- Subclass `UICollectionViewController` and do the conversion in `cellForItemAtIndexPath`
+
+Step by step:
+
+* Create a new class, call it `CustomCollectionViewCell`
+
+<img width="600" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-cell-class.png">
+
+* Set the collection view cell class to `CustomCollectionViewCell`
+
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-cell.png">
+
+* Control-drag your price label to the class as a new outlet and call it `priceLabel`
+
+<img width="600" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-cell-label.png">
+
+* Create a new class, call it `CollectionViewController` and subclass it form `UICollectionViewController`
+
+<img width="600" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-collection-class.png">
+
+* Replace the content of the class with the following:
+
+```Swift
+import UIKit
+import AbstractLayer
+
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let collection = collectionView as! ALCollectionView
+    let cell = collection.cellForItem(at: indexPath) as! CustomCollectionViewCell // Get cell
+    
+    let item = collection.array[indexPath.row] as! [String:Any] // Get item dictionary
+    var price = Float(item["price"] as! String) // Price in USD
+    price = price! * 0.85 // Convert to EUR
+    cell.priceLabel?.text = "€" + String(describing: price!) // Set new value
+    return cell
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return collectionView.numberOfItems(inSection: section)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let collection = collectionView as! ALCollectionView
+    return collection.sizeForItem(at: indexPath)
+  }
+}
+```
+
+```Objective-C
+#import "CollectionViewController.h"
+#import <AbstractLayer/AbstractLayer.h>
+
+@implementation CollectionViewController
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+  ALCollectionView *collection = (ALCollectionView *)collectionView;
+  CustomTableViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+  
+  NSDictionary *item = (NSDictionary *)collection.array[indexPath.row];
+  CGFloat price = [item[@"price"] floatValue];
+    price = price * 0.85 // Convert to EUR
+    cell.priceLabel.text = [NSString stringWithFormat:@"€%.2f",price]; // Set new value  
+  return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+  return [collectionView numberOfItemsInSection:section];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+  return [(ALCollectionView *)collectionView sizeForItemAtIndexPath:indexPath];
+}
+
+@end
+```
 
 ### Where to go next?
 
