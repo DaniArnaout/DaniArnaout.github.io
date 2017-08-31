@@ -5,7 +5,7 @@
 ## Getting started
 Follow the [Getting started](menu/getting-started/README.md) guide to setup the framework inside your app.
 
-## Apple Engineers
+## Testimonial
 
 <img width="130" alt="Xcode" src="../../menu/getting-started/attachments/ari.png">
 
