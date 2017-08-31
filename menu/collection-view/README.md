@@ -90,20 +90,18 @@ From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
 
 * Click on your navigation controller then check the box that says `Is initial View Controller` from the attributes inspector
 
-<img width="800" alt="Collection view" src="/menu/Collection-view/attachments/collection-view-main-initial.png">
+<img width="800" alt="Collection view" src="/menu/Collection-view/attachments/collection-view-main-initial1.png">
 
 * Click on your prototype cell, and set the `cell identifier` to `cell` in the attributes inspector
 
-* Change the height of the cell to 80 instead of 44 by dragging the prototype cell from the bottom in your storyboard
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-cell-id.png">
 
 * Design the collection view's cell to match the design
 
-	* `UIImageView` for `Product Image` (size 50x50)
-	* `UILabel` for `Price`  (Font size 17, semibold, white)
+	* `UIImageView` for the product image (size 150x150)
+	* `UILabel` for the price label  (Font size 17, semibold, white)
 
 <img width="800" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-design.png">
-
-This is just the way you build any UI, the next part is where the magic happens!
 
 > **NOTE:** The API doesn't uses https, so you must exculde this domain by adding `App Transport Layer` key to your `info.plist`
 
@@ -128,41 +126,38 @@ Raw value:
 
 ### Magic (Auto data-binding)
 
-Follow these steps to bind data between the JSON document that you have and the respective UI elements.
+It's time to bind data between the JSON document and the UI elements.
 
-* Open the URL [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) in a browser and take a look at the format & keys. It's an array of conversations, each with the following keys:
-	* price
-	* image_url
-	* name
+* Open the URL in a browser [http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json](http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json)
 
-Setup your collection view attributes by doing the following:
+* Copy the URL
 
-* Copy the URL from the browser and head back to your storyboard
-
-* Click on your `UICollectionView` and change its class to 
+* Go to your storyboard and click on your `UICollectionView` and change its class to 
 `ALCollectionView` in the attributes inspector
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-class.png">
 
 * Navigate to your attributes inspector, and you'll find a couple new attributes
-Set the number of columns to `2`
+
+* Set the number of columns to `2`
 
 * Paste the URL you just copied in the new `Url` field
-Type in `GET` for `HTTP Method` (which is the default method)
+
+* Type in `GET` for `HTTP Method` (which is the default method)
 
 <img width="500" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-url.png">
 
-Your collection view is now ready to process the API. It's time to match the `JSON keys` with the `UI elements` to fill the data automatically.
+Your collection view is now ready to process the API. 
 
-* Start by modifying your `UIImageView` to display the user profile pic by doing the following:
+It's time to match the `JSON keys` with the `UI elements` to fill the data automatically.
 
-	* Click on your `UIImageView` and change its class to `CPImageView` in the identity inspector
+* Click on your `UIImageView` and change its class to `ALImageView` in the identity inspector
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-cpimage.png">
 
 * Type in `image_url` in the `Json Key` field so that Abstract Layer can automatically load the image using its URL value
 
-One more thing, give your image view a Corner Radius of 5 to give a more elegant look!
+* One more thing, give your image view a `Corner Radius` of 5 to give a more elegant look!
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-image-url.png">
 
