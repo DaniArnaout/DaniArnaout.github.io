@@ -6,34 +6,36 @@
 
 > If you have an existing project, skip to [Install framework](../../menu/getting-started/README?id=install-framework).
 
-1. Open Xcode and select `Create a new Xcode project`
+* Open Xcode and select `Create a new Xcode project`
 <br/>
 <img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-xcode.png">
  
-2. Create a `Single View Application` and hit Next
+* Create a `Single View Application` and hit Next
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-single-view.png">
 
-3. Name your project `Conversations` and save it any place you want
+* Name your project `Conversations` and save it any place you want
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-conversations.png">
 
 ### Install framework
 
-4. <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.zip">Download Abstract Layer framework.</a> (Installation via `Cocoaapods` will be available soon)
-5. Unzip it, and drag `AbstractLayer.framework` into your project and make sure `Copy items if needed` is checked
+* <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.zip">Download Abstract Layer framework.</a> (Installation via `Cocoaapods` will be available soon)
+* Unzip it, and drag `AbstractLayer.framework` into your project and make sure `Copy items if needed` is checked
 <br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-framework.png">
 
-6. Go to `General` tab under your project's target and scroll to the bottom
-<br/>
-<img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-embedded.png">
+* Go to `General` tab under your project's target and scroll to the bottom
 
-7. Delete `AbstractLayer.framework` from `Linked Frameworks and Libraries`
+<p>
+<ul><ui><b style="color:red;">Delete</b> `AbstractLayer.framework` from `Linked Frameworks and Libraries`
+</ui></ul></p>
 
-8. Tap (plus) sign in `Embedded Binaries` section, and add `AbstractLayer.framework` there. 
+* Tap (plus) sign in `Embedded Binaries` section, and add `AbstractLayer.framework` there. 
 
 > The framework will now appear in both `Embedded Binaries` and `Linked Frameworks and Libraries`
+
+<img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-embedded.png">
 
 ### Get license key
 
@@ -61,13 +63,9 @@ Raw format:
 	</dict>
 ```
 
-> The provided key in this example is just a sample. You should insert your won key instead
-
-
-### Show me the magic
-As soon as you integrate the framework within your project, `UIKit` classes like `UITableView` and `UICollectionView` will acquire extra powers, that is more attributes in the Attributes Inspector.
-
-<img width="300" alt="Table view" src="../../menu/getting-started/attachments/table-view-main-attribute-inspector.png">
+> The provided key in this example is just a sample. You should insert your own key instead
 
 ### Where to go next?
-Now that you're all set, you can check out either the [Table View](/menu/table-view/) or the [Collection View](/menu/collection-view/) example.
+You're all set, check these examples:
+* [Table View](/menu/table-view/) 
+* [Collection View](/menu/collection-view/)

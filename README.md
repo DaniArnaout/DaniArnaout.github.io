@@ -5,17 +5,12 @@
 ## Getting started
 Follow the [Getting started](menu/getting-started/README.md) guide to setup the framework inside your app.
 
-## Features
-Core services handled by the framework for you are:
+## Apple Engineers
 
-* **Networking**: It’s as simple as specifying your URL and parameters in Xcode's interface builder. Session management is our concern.
-* **Data Binding**
-Binding your parsed data to your UI manually is a thing from the past. This is where the magic happens!
-* **Caching**
-Media files are cached in memory & on disk according to your needs. No more need for manual caching.
-* **Parsing**
-One of the most repetitive & boring jobs. We’ll handle it and create your models on the fly.
-* **Authentication**
-OAuth 1.0b, OAuth 2.0, JWT, Basic or Digest authentication. Pick yours and all your network requests will be handled.
-* **Security**
-All credentials and sensitive data are stored securely on your device. No more room for hackers!
+<img width="130" alt="Xcode" src="../../menu/getting-started/attachments/ari.png">
+
+**"I am blown away by how easy Abstract Layer makes it to develop a fully-featured native app!"**
+
+Ari Weinstein, Engineering Manager at Apple, Inc
+
+<img width="50" alt="Xcode" src="../../menu/getting-started/attachments/apple-logo.png">
