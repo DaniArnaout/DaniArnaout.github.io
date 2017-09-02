@@ -301,9 +301,7 @@ To customize any aspect of Abstract Layer, simply:
 * Subclass any of `Abstract Layer` classes to do your cusotmizations
 * Comform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
 
-<p style="background-color: rgb(81,148,220);color:white;padding:10px;border-radius: 10px;text-align: center;vertical-align: middle;">
-<b><font size="4">Abstract Layer is not a prototyping tool, it's strictly a production-level framework. <br/>All of our customers rely on Absract Layer in their live apps.</font></b>
-</p>
+<mark style="background-color: rgb(200, 235, 255);"><b>Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Absract Layer in their live apps.</b></mark>
 
 ### Where to go next?
 
