@@ -291,17 +291,17 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
 * Run the app
 
-## Can I use Abstract Layer in production?
+## So is it really %100 customizable? Can I actually use Abstract Layer in production?
 
-> **Absolutely!** Abstract Layer is a production-level framework. Many software development agencies and startups rely on Asbract Layer for their live apps.
+**Abstract Layer is as customizable as anything built from scratch.**
 
 As you've seen in the example above, the framework is **fully** customizable since it's built on top of native `Apple UIKit` components like `UITableView` & `UICollectionView`.
 
-Simply:
-* subclass any of `Abstract Layer` classes to do your cusotmizations
+To customize any aspect of Abstract Layer, simply:
+* Subclass any of `Abstract Layer` classes to do your cusotmizations
 * Comform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
 
-
+> Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Asbract Layer in their live apps.
 
 ### Where to go next?
 
