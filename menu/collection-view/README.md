@@ -206,11 +206,17 @@ Step by step:
 
 * Control-drag your price label to the class as a new outlet and call it `priceLabel`
 
+* Don't forget to import `AbstractLayer` to the class's header
+
 <img width="600" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-cell-label.png">
 
 * Create a new class, call it `CollectionViewController` and subclass it form `UICollectionViewController`
 
 <img width="600" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-collection-class.png">
+
+* Set your collection view class in storyboard to `CollectionViewController`
+
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-class.png">
 
 * Replace the content of the class with the following:
 
@@ -224,7 +230,7 @@ import AbstractLayer
 
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  override func collectionView(&#95; collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let collection = collectionView as! ALCollectionView
     let cell = collection.cellForItem(at: indexPath) as! CustomCollectionViewCell // Get cell
     
@@ -235,11 +241,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     return cell
   }
   
-  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  override func collectionView(&#95; collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return collectionView.numberOfItems(inSection: section)
   }
   
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+  func collectionView(&#95; collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let collection = collectionView as! ALCollectionView
     return collection.sizeForItem(at: indexPath)
   }
@@ -250,35 +256,52 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
 
 <div id="objcDIV" style="display:none;">
+<span>
 <pre><code>
-
 #import "CollectionViewController.h"
-#import <AbstractLayer/AbstractLayer.h>
+#import &lt;AbstractLayer/AbstractLayer.h&gt;
 
 @implementation CollectionViewController
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-  ALCollectionView *collection = (ALCollectionView *)collectionView;
-  CustomTableViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+- (UICollectionViewCell &#42;)collectionView:(UICollectionView &#42;)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath &#42;)indexPath {
+  ALCollectionView &#42;collection = (ALCollectionView &#42;)collectionView;
+  CustomTableViewCell &#42;cell = [collectionView cellForItemAtIndexPath:indexPath];
   
-  NSDictionary *item = (NSDictionary *)collection.array[indexPath.row];
+  NSDictionary &#42;item = (NSDictionary &#42;)collection.array[indexPath.row];
   CGFloat price = [item[@"price"] floatValue];
-    price = price * 0.85 // Convert to EUR
+    price = price &#42; 0.85 // Convert to EUR
     cell.priceLabel.text = [NSString stringWithFormat:@"€%.2f",price]; // Set new value  
   return cell;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView &#42;)collectionView numberOfItemsInSection:(NSInteger)section {
   return [collectionView numberOfItemsInSection:section];
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-  return [(ALCollectionView *)collectionView sizeForItemAtIndexPath:indexPath];
+- (CGSize)collectionView:(UICollectionView &#42;)collectionView layout:(nonnull UICollectionViewLayout &#42;)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath &#42;)indexPath {
+  return [(ALCollectionView &#42;)collectionView sizeForItemAtIndexPath:indexPath];
 }
 
 @end
 </code></pre>
+</span>
 </div>
+
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-euro.png">
+
+* Run the app
+
+## Can I use Abstract Layer in production?
+
+> **Absolutely!** Abstract Layer is a production-level framework. Many software development agencies and startups rely on Asbract Layer for their live apps.
+
+As you've seen in the example above, the framework is **fully** customizable since it's built on top of native `Apple UIKit` components like `UITableView` & `UICollectionView`.
+
+Simply:
+* subclass any of `Abstract Layer` classes to do your cusotmizations
+* Comform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
+
+
 
 ### Where to go next?
 
