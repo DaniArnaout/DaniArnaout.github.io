@@ -98,16 +98,19 @@ From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
 
 * Design the collection view's cell to match the design
 
+	* Increase the cell size to (150x150)
 	* `UIImageView` for the product image (size 150x150)
 	* `UILabel` for the price label  (Font size 17, semibold, white)
 
 <img width="800" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-design.png">
 
-> **NOTE:** The API doesn't uses https, so you must exculde this domain by adding `App Transport Layer` key to your `info.plist`
+### App Transport Security
+
+* Go to `info.plist` and add the following:
 
 <img width="500" alt="Table view" src="/menu/collection-view/attachments/app-transport-layer.png">
 
-Raw value:
+**Or** right-click `info.plist -> Open As -> Source Code` and paste the following:
 ```xml
 <key>NSAppTransportSecurity</key>
 	<dict>
@@ -211,7 +214,11 @@ Step by step:
 
 * Replace the content of the class with the following:
 
-```Swift
+<button onclick="showSwift()">Swift</button>
+<button onclick="showObjc()">Objective-C</button>
+
+<div id="swiftDIV">
+<pre><code>
 import UIKit
 import AbstractLayer
 
@@ -237,9 +244,14 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     return collection.sizeForItem(at: indexPath)
   }
 }
-```
 
-```Objective-C
+</code></pre>
+</div>
+
+
+<div id="objcDIV" style="display:none;">
+<pre><code>
+
 #import "CollectionViewController.h"
 #import <AbstractLayer/AbstractLayer.h>
 
@@ -265,7 +277,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 }
 
 @end
-```
+</code></pre>
+</div>
 
 ### Where to go next?
 

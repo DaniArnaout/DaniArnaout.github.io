@@ -1,5 +1,5 @@
 - [**FAQ**](/menu/faq/)
-- [**Getting started**](/menu/getting-started/)
+- [**Getting started**](/)
 - **Table view**
 	- [**Overview**](/menu/table-view/)
 	- [Parameters](/menu/table-view/parameters)
