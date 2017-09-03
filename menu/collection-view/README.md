@@ -299,7 +299,7 @@ As you've seen in the example above, the framework is **fully** customizable sin
 
 To customize any aspect of Abstract Layer, simply:
 * Subclass any of `Abstract Layer` classes to do your cusotmizations
-* Comform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
+* Conform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
 
 <mark style="background-color: rgb(200, 235, 255);"><b>Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Absract Layer in their live apps.</b></mark>
 

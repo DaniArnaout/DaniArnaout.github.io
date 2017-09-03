@@ -216,13 +216,15 @@ Run the project, and there you go! MAGIC!
 
 ## Hold on
 
-This looks great so far, but we're sure you've got many questions about how far can Absract Layer go. 
+This looks great so far, but we're sure you've got many questions about how far can Abstract Layer go. 
 
 The answer is: **VERY!**
 
 Check out this example to see for yourself.
 
-### Convert label price from USD to EUR
+### Display "Today" & "Yesterday" instead of full date
+
+Instead of just displaying the dates in `MM/dd/yyyy` format, let's add 2 conditions. Display `today` or `yesterday` if the dates are within these two ranges.
 
 > Remember: `ALTableView` is a subclass of `UITableView`
 
@@ -230,7 +232,7 @@ Check out this example to see for yourself.
 
 How to do it:
 
-1- Subclass `UITableViewCell` and link the price label
+1- Subclass `UITableViewCell` and link the date label
 
 2- Subclass `UITableViewController` and do the conversion in `cellForItemAtIndexPath`
 
@@ -238,25 +240,25 @@ Step by step:
 
 * Create a new class, call it `CustomTableViewCell`
 
-<img width="600" alt="Table view" src="/menu/Table-view/attachments/Table-view-main-custom-cell-class.png">
+<img width="600" alt="Table view" src="/menu/table-view/attachments/table-view-main-custom-cell-class.png">
 
 * Set the Table view cell class to `CustomTableViewCell`
 
 <img width="300" alt="Table view" src="/menu/collection-view/attachments/collection-view-main-custom-cell.png">
 
-* Control-drag your price label to the class as a new outlet and call it `priceLabel`
+* Control-drag your date label to the class as a new outlet and call it `dateLabel`
 
 * Don't forget to import `AbstractLayer` to the class's header
 
-<img width="600" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-cell-label.png">
+<img width="600" alt="Collection view" src="/menu/table-view/attachments/table-view-main-link-date.png">
 
 * Create a new class, call it `TableViewController` and subclass it form `UITableViewController`
 
-<img width="600" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-collection-class.png">
+<img width="600" alt="Table view" src="/menu/table-view/attachments/table-view-main-subclass-uitableviewcontroller.png">
 
 * Set your collection view class in storyboard to `TableViewController`
 
-<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-custom-class.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-custom-tableviewcontroller-class.png">
 
 * Replace the content of the class with the following:
 
@@ -270,18 +272,34 @@ import AbstractLayer
 
 class TableViewController: UITableViewController {
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  //
+  // MARK: Lazy load
+  //
+  private lazy var today:Double = {
+    var calendar = NSCalendar.current
+    calendar.timeZone = NSTimeZone(abbreviation: "UTC")! as TimeZone
+    return calendar.startOfDay(for: Date()).timeIntervalSince1970
+  }()
+  
+  private lazy var yesterday:Double = {
+    var calendar = NSCalendar.current
+    calendar.timeZone = NSTimeZone(abbreviation: "UTC")! as TimeZone
+    return calendar.startOfDay(for: Date().addingTimeInterval(-86400)).timeIntervalSince1970
+  }()
+  
+  //
+  // MARK: Table view datasource
+  //
+  override func tableView(&#95; tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let table = tableView as! ALTableView
     let cell = table.cellForRow(at: indexPath) as! CustomTableViewCell
     
+    // Get item info
     let array = table.array.first as! [[String:Any]]
     let item = array[indexPath.row] // Get item dictionary
     let timestamp = item["timestamp"] as! Double
     
     // Date calculations
-    let today = getTodayTimestamp()
-    let yesterday = getYesterdayTimestamp()
-    
     if timestamp > today {
       cell.dateLabel?.text = "Today"
     } else if timestamp > yesterday {
@@ -291,26 +309,13 @@ class TableViewController: UITableViewController {
     return cell
   }
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(&#95; tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tableView.numberOfRows(inSection: section)
   }
   
-  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+  override func tableView(&#95; tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let table = tableView as! ALTableView
     return table.heightForRow(at: indexPath)
-  }
-  
-  func getTodayTimestamp() -> Double {
-    var calendar = NSCalendar.current
-    calendar.timeZone = NSTimeZone(abbreviation: "UTC")! as TimeZone
-    return calendar.startOfDay(for: Date()).timeIntervalSince1970
-  }
-  
-  func getYesterdayTimestamp() -> Double {
-    var calendar = NSCalendar.current
-    calendar.timeZone = NSTimeZone(abbreviation: "UTC")! as TimeZone
-    return calendar.startOfDay(for: Date().addingTimeInterval(-86400)).timeIntervalSince1970
-    
   }
 }
 
@@ -321,28 +326,64 @@ class TableViewController: UITableViewController {
 <div id="objcDIV" style="display:none;">
 <span>
 <pre><code>
-#import "CollectionViewController.h"
+#import "TableViewController.h"
 #import &lt;AbstractLayer/AbstractLayer.h&gt;
+#import "CustomTableViewCell.h"
 
-@implementation CollectionViewController
+@interface TableViewController ()
+@property (nonatomic, assign) NSTimeInterval today,yesterday;
+@end
 
-- (UICollectionViewCell &#42;)collectionView:(UICollectionView &#42;)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath &#42;)indexPath {
-  ALCollectionView &#42;collection = (ALCollectionView &#42;)collectionView;
-  CustomTableViewCell &#42;cell = [collectionView cellForItemAtIndexPath:indexPath];
+@implementation TableViewController
+
+//
+// UITableView Datasource
+//
+- (NSInteger)tableView:(UITableView &#42;)tableView numberOfRowsInSection:(NSInteger)section {
+  return [tableView numberOfRowsInSection:section];
+}
+
+- (UITableViewCell &#42;)tableView:(UITableView &#42;)tableView cellForRowAtIndexPath:(NSIndexPath &#42;)indexPath {
   
-  NSDictionary &#42;item = (NSDictionary &#42;)collection.array[indexPath.row];
-  CGFloat price = [item[@"price"] floatValue];
-    price = price &#42; 0.85 // Convert to EUR
-    cell.priceLabel.text = [NSString stringWithFormat:@"€%.2f",price]; // Set new value  
+  CustomTableViewCell &#42;cell = [tableView cellForRowAtIndexPath:indexPath];
+  
+  // Get item info
+  NSArray &#42;array = [(ALTableView &#42;)tableView array].firstObject;
+  NSDictionary &#42;item = array[indexPath.row];
+  CGFloat timestamp = [item[@"timestamp"] doubleValue];
+  
+  // Check dates
+  if (timestamp > self.today) {
+    cell.dateLabel.text = @"Today";
+  } else if (timestamp > self.yesterday) {
+    cell.dateLabel.text = @"Yesterday";
+  }
   return cell;
 }
 
-- (NSInteger)collectionView:(UICollectionView &#42;)collectionView numberOfItemsInSection:(NSInteger)section {
-  return [collectionView numberOfItemsInSection:section];
+- (CGFloat)tableView:(UITableView &#42;)tableView heightForRowAtIndexPath:(NSIndexPath &#42;)indexPath {
+  return [(ALTableView &#42;)tableView heightForRowAtIndexPath:indexPath];
 }
 
-- (CGSize)collectionView:(UICollectionView &#42;)collectionView layout:(nonnull UICollectionViewLayout &#42;)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath &#42;)indexPath {
-  return [(ALCollectionView &#42;)collectionView sizeForItemAtIndexPath:indexPath];
+//
+// Lazy Instantiation
+//
+- (NSTimeInterval)today {
+  if (!&#95;today) {
+    NSCalendar &#42; calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [calendar setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    &#95;today = [calendar startOfDayForDate:[NSDate date]].timeIntervalSince1970;
+  }
+  return &#95;today;
+}
+
+- (NSTimeInterval)yesterday {
+  if (!&#95;yesterday) {
+    NSCalendar &#42; calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [calendar setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    &#95;yesterday = [[calendar startOfDayForDate:[NSDate date]] dateByAddingTimeInterval:-86400].timeIntervalSince1970;
+  }
+  return &#95;yesterday;
 }
 
 @end
@@ -350,22 +391,23 @@ class TableViewController: UITableViewController {
 </span>
 </div>
 
-<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-euro.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-change.png">
 
 * Run the app
 
-## Can I use Abstract Layer in production?
+## So is it really 100% customizable? Can I actually use Abstract Layer in production?
 
-> **Absolutely!** Abstract Layer is a production-level framework. Many software development agencies and startups rely on Asbract Layer for their live apps.
+**Abstract Layer is as customizable as anything built from scratch.**
 
 As you've seen in the example above, the framework is **fully** customizable since it's built on top of native `Apple UIKit` components like `UITableView` & `UICollectionView`.
 
-Simply:
-* subclass any of `Abstract Layer` classes to do your cusotmizations
-* Comform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
+To customize any aspect of Abstract Layer, simply:
+* Subclass any of `Abstract Layer` classes to do your cusotmizations
+* Conform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
+
+<mark style="background-color: rgb(200, 235, 255);"><b>Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Absract Layer in their live apps.</b></mark>
 
 ### Where to go next?
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-change.png">
 
 > Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/table-view/Conversations.zip">final project</a> and try it out
 
