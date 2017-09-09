@@ -36,7 +36,7 @@
 
 <img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-software.png">
 
-* Go to you Xcode project, and naviate to `Build Phases`
+* Go to you Xcode project, and navigate to `Build Phases`
 
 * Tap on `+` then `Add Run Script` and ad the following line:
 

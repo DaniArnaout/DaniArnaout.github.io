@@ -213,4 +213,4 @@ self.tableView.loadingDelegate = self;
 ``` 
 
 ## Where to go next?
-Check out how awesome [collection view](/menu/collection-view/) is
+Check out how awesome [collection view](/menu/collection-view/) is.

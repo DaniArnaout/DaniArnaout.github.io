@@ -130,14 +130,14 @@ func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath:
   
   func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     collectionView.moveItem(at: sourceIndexPath, to: destinationIndexPath)
-  // Do any custom wrok here
+  // Do any custom work here
   }
 ```
 
 ```Objective-C
 - (void)collectionView:(UIcollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
   [collectionView moveItemAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
-  // Do any custom wrok here
+  // Do any custom work here
 }
 ```
 

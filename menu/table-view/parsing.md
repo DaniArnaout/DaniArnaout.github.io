@@ -2,7 +2,7 @@
 
 > Learn how to handle different types of JSON
 
-Sometimes, when you recieve a `JSON` response, the array you want to parse is not the root of your response. 
+Sometimes, when you receive a `JSON` response, the array you want to parse is not the root of your response. 
 
 In this case, you just have to type in the JSON root in your attribute inspector.
 

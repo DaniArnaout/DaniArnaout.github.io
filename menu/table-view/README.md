@@ -84,24 +84,9 @@ You're building the conversations screen in a chat app. Here are the API and the
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
 
-## The old way
-
-Normally, you would do the following:
-
-1. Build the UI in Interface Builder
-2. Subclass your `UITableViewCell`
-3. Link UI elements to the `UITableViewCell`
-4. Create a `Conversation` model object with id, name, lastMessage, date, & imageUrl properties
-5. Create a network manager
-6. Build & send your `URLRequest` with URL & parameters
-7. Receive a response and check for any errors
-8. Parse the JSON response into models and check for parsing errors
-9. Bind the parsed array with all the UI elements
-10. Finally reload your `UITableView`!
-
 ## Abstract Layer way
 
-Just set your `URL` & `JSON keys` right inside Interface Builder, and Abstract Layer will take care of everything else!
+Just set your API information right inside Interface Builder, and Abstract Layer will populate the table view for you!
 
 Let's see how this is done!
 
@@ -111,7 +96,7 @@ If you haven't already added the framework to your Xcode project, follow [this t
 
 ### Building the UI
 
-* Open `Main.storyaboard` and delete the default view controller
+* Open `Main.storyboard` and delete the default view controller
 
 * Drag an instance of `UITableViewController`
 From the menu bar choose:
@@ -135,7 +120,7 @@ From the menu bar choose:
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-design.png">
 
-> **NOTE:** The API doesn't uses https, so you must exculde this domain by adding `App Transport Layer` key to your `info.plist`
+> **NOTE:** The API doesn't uses https, so you must exclude this domain by adding `App Transport Layer` key to your `info.plist`
 
 <img width="500" alt="Table view" src="/menu/table-view/attachments/app-transport-layer.png">
 
@@ -402,10 +387,10 @@ class TableViewController: UITableViewController {
 As you've seen in the example above, the framework is **fully** customizable since it's built on top of native `Apple UIKit` components like `UITableView` & `UICollectionView`.
 
 To customize any aspect of Abstract Layer, simply:
-* Subclass any of `Abstract Layer` classes to do your cusotmizations
+* Subclass any of `Abstract Layer` classes to do your customizations
 * Conform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
 
-<mark style="background-color: rgb(200, 235, 255);"><b>Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Absract Layer in their live apps.</b></mark>
+<mark style="background-color: rgb(200, 235, 255);"><b>Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Abstract Layer in their live apps.</b></mark>
 
 ### Where to go next?
 

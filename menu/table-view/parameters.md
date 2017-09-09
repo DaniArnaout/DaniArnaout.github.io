@@ -15,7 +15,7 @@ To add multiple parameters add `&` sign between them.
 
 Example:`key1=value1&key2=value`
 
-> Abstract Layer will automatically do the URL encoding for you if it's a `GET` http method, and format them as JSON if it's `POST`, `UPDATE`, or `DELETE` http method.
+> Abstract Layer will automatically do the URL encoding for you if it's a `GET` http method, and format them as JSON if it's `POST`, `PUT`, `PATCH`, or `DELETE` http method.
 
 <img width="300" alt="Xcode" src="../menu/table-view/attachments/table-view-parameters.png">
 

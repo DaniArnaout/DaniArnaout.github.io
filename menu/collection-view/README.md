@@ -83,7 +83,7 @@ If you haven't already added the framework to your Xcode project, follow [this t
 
 ### Build the UI
 
-* Open `Main.storyaboard` and delete the default View Controller you see
+* Open `Main.storyboard` and delete the default View Controller you see
 
 * Drag an instance of `UICollectionViewController`
 From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
@@ -184,7 +184,7 @@ Check out this example to see for yourself.
 
 ### Convert label price from USD to EUR
 
-> Remember: `ALColletionView` is a subclass of `UICollectionView`
+> Remember: `ALCollectionView` is a subclass of `UICollectionView`
 
 > Remember: You have FULL access to the data parsed by accessing the `array` property on your collection view
 
@@ -298,10 +298,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 As you've seen in the example above, the framework is **fully** customizable since it's built on top of native `Apple UIKit` components like `UITableView` & `UICollectionView`.
 
 To customize any aspect of Abstract Layer, simply:
-* Subclass any of `Abstract Layer` classes to do your cusotmizations
+* Subclass any of `Abstract Layer` classes to do your customizations
 * Conform to the `delegate` and `datasource` protocols just as you would do with a regular `UITableView` & `UICollectionView`
 
-<mark style="background-color: rgb(200, 235, 255);"><b>Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Absract Layer in their live apps.</b></mark>
+<mark style="background-color: rgb(200, 235, 255);"><b>Abstract Layer is not a prototyping tool, it's strictly a production-level framework. All of our customers rely on Abstract Layer in their live apps.</b></mark>
 
 ### Where to go next?
 

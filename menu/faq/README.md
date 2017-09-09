@@ -258,7 +258,7 @@ func didLoadCollectionViewWithError(_ error: Error!)
 ```
 
 Set `loadingDelegate` to one of your classes, then implement this method.
-If the `error` object is empty, then no error occured.
+If the `error` object is empty, then no error occurred.
 Otherwise, you can print out the `error.localizedString` to check for the error details.
 
 ---
@@ -399,7 +399,7 @@ Copy/paste the following methods, and you'll be set. Abstract Layer handle delet
 
 **Yes.**
 
-Abstract Layer doesn't modify anything related to headers or footers, so just do it the regular way by dragging a view on top of your `UITableView` in storybaord, or do it by code.
+Abstract Layer doesn't modify anything related to headers or footers, so just do it the regular way by dragging a view on top of your `UITableView` in storyboard, or do it by code.
 
 ---
 
@@ -487,7 +487,7 @@ Abstract Layer will take care of updating both, the table/collection and the dat
 The benefit of having a base URL is to be able to switch in one place so that it applies to the whole app.
 This is useful when switching between development and release environments.
 
-To acheive that, add the following code in the class that handles networking or constants.
+To achieve that, add the following code in the class that handles networking or constants.
 
 ```Swift
 let baseURL = "http://localhost:8888"
@@ -498,7 +498,7 @@ ALStore.sharedInstance().setValue(baseURL, forKey: "baseURL")
 [[ALStore sharedInstance] setValue:@"http://localhost:8888" forKey:@"baseURL"];
 ```
 
-Now, you can use double curley braces in your URL field in the attribute inspector.
+Now, you can use double curly braces in your URL field in the attribute inspector.
 
 <img width="300" alt="Xcode" src="../../menu/faq/attachements/baseUrl.png">
 
@@ -591,7 +591,7 @@ func didLoadCollectionViewWithError(_ error: Error!)
 ```
 
 Set `loadingDelegate` to one of your classes, then implement this method.
-If the `error` object is empty, then no error occured.
+If the `error` object is empty, then no error occurred.
 Otherwise, you can print out the `error.localizedString` to check for the error details.
 
 ---
@@ -624,7 +624,7 @@ func didLoadCollectionViewWithError(_ error: Error!)
 ```
 
 Set `loadingDelegate` to one of your classes, then implement this method.
-If the `error` object is empty, then no error occured.
+If the `error` object is empty, then no error occurred.
 Otherwise, you can print out the `error.localizedString` to check for the error details.
 
 ---
