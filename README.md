@@ -26,6 +26,27 @@
 
 ### License key
 
+> If you're using a trial key, check the [Trial key section](#/trial-key)
+
+#### Activating your license:
+
+* Download AbstractPro Manager and log in using the email and activation key you received via email
+
+* The license status will change to "ACTIVE"
+
+<img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-software.png">
+
+* Go to you Xcode project, and naviate to `Build Phases`
+
+* Tap on `+` then `Add Run Script` and ad the following line:
+
+**./ProjectName/Abstractlayer.framework/run**
+
+<img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-run-script.png">
+
+* Build the project, and you're good to go
+
+### Trial key
 > To get your free trial license key, email us at <a href="mailto:support@abstractlayer.com?Subject=Free%20Trial%20Key%20Request" target="_top">support@asbtractlayer.com</a>
 </p>
 

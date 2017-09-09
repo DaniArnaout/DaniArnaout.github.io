@@ -220,8 +220,10 @@ Step by step:
 
 * Replace the content of the class with the following:
 
-<button onclick="showSwift()">Swift</button>
-<button onclick="showObjc()">Objective-C</button>
+<div style="height:30px;">
+<button id="objcButton" onclick="showObjc()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: darkGray;">Objective-C</button>
+<button id="swiftButton" onclick="showSwift()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: rgb(81,148,220); font-weight:600;">Swift</button>
+</div>
 
 <div id="swiftDIV">
 <pre><code>
@@ -256,7 +258,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
 
 <div id="objcDIV" style="display:none;">
-<span>
 <pre><code>
 #import "CollectionViewController.h"
 #import &lt;AbstractLayer/AbstractLayer.h&gt;
@@ -284,7 +285,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
 @end
 </code></pre>
-</span>
 </div>
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-final-euro.png">
