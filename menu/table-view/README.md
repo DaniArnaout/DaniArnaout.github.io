@@ -3,7 +3,7 @@
 
 You're building the conversations screen in a chat app. Here are the API and the design.
 
-**API URL**: [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json). 
+**API URL**: [https://api.abstractlayer.com/demo/silicon_valley/get_users](https://api.abstractlayer.com/demo/silicon_valley/get_users) 
 
 <details>
   <summary>Click the arrow to check out the full JSON response</summary>
@@ -88,13 +88,11 @@ You're building the conversations screen in a chat app. Here are the API and the
 
 Just set your API information right inside Interface Builder, and Abstract Layer will populate the table view for you!
 
-Let's see how this is done!
-
 ### Integrate the framework
 
 If you haven't already added the framework to your Xcode project, follow [this tutorial](/menu/getting-started/).
 
-### Building the UI
+### Build the UI
 
 * Open `Main.storyboard` and delete the default view controller
 
@@ -126,28 +124,6 @@ From the menu bar choose:
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-2-line.png">
 	
-#### Security
-
-The API doesn't uses https, so you must exclude this domain by adding `App Transport Layer` key to your `info.plist`
-
-<img width="500" alt="Table view" src="/menu/table-view/attachments/app-transport-layer.png">
-
-Raw value:
-```xml
-<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>abstractlayer.com</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
-```
 #### Circular Image
 
 To get a circular user image:
@@ -162,7 +138,7 @@ To get a circular user image:
 
 It's time to bind data between the JSON document and the UI elements.
 
-* Open the URL in a browser [http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json](http://docs.abstractlayer.com/demo/table-view/silicon-valley/conversations.json) 
+* Open the URL in a browser [https://api.abstractlayer.com/demo/silicon_valley/get_users](https://api.abstractlayer.com/demo/silicon_valley/get_users) 
 
 * Copy the URL
 
@@ -176,7 +152,7 @@ It's time to bind data between the JSON document and the UI elements.
 
 * Type in `GET` for HTTP method
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-url.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-url.png">
 
 Your table view is now ready to process the API. It's time to match the **JSON keys** with the **UI elements** to fill the data automatically.
 

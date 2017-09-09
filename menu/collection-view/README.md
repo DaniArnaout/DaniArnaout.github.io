@@ -1,9 +1,9 @@
 # Collection View
-> Populate a collection view without writing a single line of code! Just set the `URL` & `JSON keys`. 
+> Populate a collection view without writing a single line of code! Just set the `URL` & `JSON keys` and Abstract Layer will handle the rest. 
 
 **Example**: Marketplace app
 
-**API URL**: [http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json](http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json). 
+**API URL**: [https://api.abstractlayer.com/demo/marketplace/get_items](https://api.abstractlayer.com/demo/marketplace/get_items). 
 
 <details>
   <summary>Click here to check out the full JSON response</summary>
@@ -104,34 +104,11 @@ From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
 
 <img width="800" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-design.png">
 
-### App Transport Security
-
-* Go to `info.plist` and add the following:
-
-<img width="500" alt="Table view" src="/menu/collection-view/attachments/app-transport-layer.png">
-
-**Or** right-click `info.plist -> Open As -> Source Code` and paste the following:
-```xml
-<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>abstractlayer.com</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
-```
-
 ### Magic (Auto data-binding)
 
 It's time to bind data between the JSON document and the UI elements.
 
-* Open the URL in a browser [http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json](http://docs.abstractlayer.com/demo/collection-view/marketplace/marketplace.json)
+* Open the URL in a browser [https://api.abstractlayer.com/demo/marketplace/get_items](https://api.abstractlayer.com/demo/marketplace/get_items)
 
 * Copy the URL
 
@@ -148,7 +125,7 @@ It's time to bind data between the JSON document and the UI elements.
 
 * Type in `GET` for `HTTP Method` (which is the default method)
 
-<img width="500" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-url.png">
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-url.png">
 
 Your collection view is now ready to process the API. 
 
