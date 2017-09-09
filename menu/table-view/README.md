@@ -109,18 +109,26 @@ From the menu bar choose:
 
 * Click on your prototype cell, and set the `cell identifier` to `cell` in the attributes inspector
 
-* Drag the prototype cell in your storyboard from the bottom to increase its height to `80`
+* Drag the prototype cell in your storyboard from the bottom to increase its `height to 80`
 
 * Design the tableview's cell to match the design
-
+	
+	<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-design.png">
+	
 	* `UIImageView` for the user image **(size 50x50)**
 	* `UILabel` for the name label  **(Font size 13, semibold, black)**
 	* `UILabel` for the last message label **(Font size 12, regular, dark gray)**
 	* `UILabel` for the date label **(Font size 12, regular, light gray)**
+	
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-design.png">
 
-> **NOTE:** The API doesn't uses https, so you must exclude this domain by adding `App Transport Layer` key to your `info.plist`
+* Choose `2 lines` for last message label
+
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-2-line.png">
+	
+#### Security
+
+The API doesn't uses https, so you must exclude this domain by adding `App Transport Layer` key to your `info.plist`
 
 <img width="500" alt="Table view" src="/menu/table-view/attachments/app-transport-layer.png">
 
@@ -140,6 +148,15 @@ Raw value:
 		</dict>
 	</dict>
 ```
+#### Circular Image
+
+To get a circular user image:
+
+* Click on your user image view and head to the attribute inspector.
+
+* Choose `ON` for `circular`. 
+
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-circular-image.png">
 
 ### Magic (Auto data-binding)
 
@@ -153,15 +170,15 @@ It's time to bind data between the JSON document and the UI elements.
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cptable.png">
 
-* Navigate to your attributes inspector, and you'll find a couple new attributes
+* Navigate to your attributes inspector, and you'll find a list of new attributes
 
 * Paste the URL you just copied in the new `Url` field
 
-* Type in `GET` for HTTP method (Which is also the default method)
+* Type in `GET` for HTTP method
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-url.png">
 
-Your table view is now ready to process the API. It's time to match the `JSON keys` with the `UI elements` to fill the data automatically.
+Your table view is now ready to process the API. It's time to match the **JSON keys** with the **UI elements** to fill the data automatically.
 
 * Click on your `UIImageView` and change its class to `ALImageView` in the identity inspector
 
