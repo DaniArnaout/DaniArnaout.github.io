@@ -24,6 +24,8 @@
 
 <img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-embedded.png">
 
+### Activate your purchased license
+<b style="color:red;">Only</b> if you have **purchased** a license, [activate it here](/menu/getting-started/activate-license), otherwise proceed with the tutorial.
 
 ### Trial key
 > To get your free trial license key, email us at <a href="mailto:support@abstractlayer.com?Subject=Free%20Trial%20Key%20Request" target="_top">support@asbtractlayer.com</a>
