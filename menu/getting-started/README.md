@@ -8,7 +8,7 @@
 
 ### Install framework
 
-* <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.1.zip">Download Abstract Layer framework.</a> (Installation via `Cocoaapods` will be available soon)
+* <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.2.zip">Download Abstract Layer framework.</a> (Installation via `Cocoaapods` will be available soon)
 * **Drag** `AbstractLayer.framework` into your project and make sure `Copy items if needed` is checked
 <br/><br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-framework.png">
@@ -24,6 +24,8 @@
 
 <img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-embedded.png">
 
+### Activate your purchased license
+<b style="color:red;">Only</b> if you have **purchased** a license, [activate it here](/menu/getting-started/activate-license), otherwise proceed with the tutorial.
 
 ### Trial key
 > To get your free trial license key, email us at <a href="mailto:support@abstractlayer.com?Subject=Free%20Trial%20Key%20Request" target="_top">support@asbtractlayer.com</a>

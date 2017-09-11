@@ -10,7 +10,7 @@
 
 * Tap on `+` then `Add Run Script` and add the following line:
 
-**./ProjectName/Abstractlayer.framework/run**
+**`${PROJECT_DIR}/AbstractLayer.framework/run`**
 
 <img width="600" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-run-script.png">
 
