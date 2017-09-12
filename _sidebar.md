@@ -2,6 +2,8 @@
 - [**Getting started**](/)
 - **Table view**
 	- [**Overview**](/menu/table-view/)
+	- [Error handling](/menu/table-view/error-handling)
+	- [Passing Data](/menu/table-view/passing-data)
 	- [Parameters](/menu/table-view/parameters)
 	- [Pagination](/menu/table-view/pagination)
 	- [Parsing](/menu/table-view/parsing)
@@ -9,9 +11,10 @@
 	- [XIB](/menu/table-view/xib)
 	- [Authentication](/menu/table-view/authentication)
 	- [Custom cases](/menu/table-view/custom-cases)
-	- [Error handling](/menu/table-view/error-handling)
 - **Collection view**
 	- [**Overview**](/menu/collection-view/)
+	- [Error handling](/menu/collection-view/error-handling)
+	- [Passing Data](/menu/collection-view/passing-data)
 	- [Parameters](/menu/collection-view/parameters)
 	- [Pagination](/menu/collection-view/pagination)
 	- [Parsing](/menu/collection-view/parsing)
@@ -19,7 +22,6 @@
 	- [XIB](/menu/collection-view/xib)
 	- [Authentication](/menu/collection-view/authentication)
 	- [Custom cases](/menu/collection-view/custom-cases)
-	- [Error handling](/menu/collection-view/error-handling)
 - [**Debugging**](/menu/debugging/)
 - [**Changelog**](/menu/changelog/)
 	- [V1.0](/menu/changelog/1.0/) 	

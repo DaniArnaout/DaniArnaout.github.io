@@ -1,5 +1,9 @@
-# Collection View
-> Populate a collection view without writing a single line of code! Just set the `URL` & `JSON keys` and Abstract Layer will handle the rest. 
+<div>
+<span class="right-note">9 minutes tutorial</span>
+ <h1>Collection View</h1>
+</div>
+
+<span class="regular-note">Populate a collection view without writing a single line of code! </span>
 
 **Example**: Marketplace app
 
@@ -86,13 +90,14 @@ If you haven't already added the framework to your Xcode project, follow [this t
 * Open `Main.storyboard` and delete the default View Controller you see
 
 * Drag an instance of `UICollectionViewController`
-From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
 
-* Click on your navigation controller then check the box that says `Is initial View Controller` from the attributes inspector
+* From the menu bar choose `Editor → Embed in → Navigation Controller`
 
-<img width="800" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-initial1.png">
+* Click on your navigation controller then check the box that says `Is initial View Controller` from the **Attributes Inspector**
 
-* Click on your prototype cell, and set the `cell identifier` to `cell` in the attributes inspector
+<img width="800" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-initial.png">
+
+* Click on your prototype cell, and set the `cell identifier` to `cell` in the **Attributes Inspector**
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-cell-id.png">
 
@@ -102,7 +107,7 @@ From the menu bar choose `Editor" → "Embed in" → "Navigation Controller`
 	* `UIImageView` for the product image (size 150x150)
 	* `UILabel` for the price label  (Font size 17, semibold, white)
 
-<img width="800" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-design.png">
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-design.png">
 
 ### Magic (Auto data-binding)
 
@@ -113,11 +118,11 @@ It's time to bind data between the JSON document and the UI elements.
 * Copy the URL
 
 * Go to your storyboard and click on your `UICollectionView` and change its class to 
-`ALCollectionView` in the attributes inspector
+`ALCollectionView` in the **Attributes Inspector**
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-class.png">
 
-* Navigate to your attributes inspector, and you'll find a couple new attributes
+* Navigate to your **Attributes Inspector**, and you'll find a couple new attributes
 
 * Set the number of columns to `2`
 
@@ -131,7 +136,7 @@ Your collection view is now ready to process the API.
 
 It's time to match the `JSON keys` with the `UI elements` to fill the data automatically.
 
-* Click on your `UIImageView` and change its class to `ALImageView` in the identity inspector
+* Click on your `UIImageView` and change its class to `ALImageView` in the **Identity Inspector**
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-cpimage.png">
 
@@ -141,15 +146,17 @@ It's time to match the `JSON keys` with the `UI elements` to fill the data autom
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-image-url.png">
 
-* Click on the price label and change its class to `ALLabel` in the identity inspector
+* Click on the price label and change its class to `ALLabel` in the **Identity Inspector**
 
 <img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-price-label.png">
 
 Type in `price` in the `Json Key` field to automatically match the JSON value with the price label. Add `$` as a prefix
 
-<img width="500" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-price.png">
+<img width="300" alt="Collection view" src="/menu/collection-view/attachments/collection-view-main-price.png">
 
 Run the project, and there you go! MAGIC!
+
+<span class="important-note">Handle any kind of error by checking the <a href="/#/menu/collection-view/error-handling" target="_blank">Error handling section</a></span>
 
 ## Hold on
 
@@ -161,17 +168,9 @@ Check out this example to see for yourself.
 
 ### Convert label price from USD to EUR
 
-> Remember: `ALCollectionView` is a subclass of `UICollectionView`
+<span class="important-note">Remember: **ALCollectionView** is a subclass of **UICollectionView**</span>
 
-> Remember: You have FULL access to the data parsed by accessing the `array` property on your collection view
-
-How to do it:
-
-1- Subclass `UICollectionViewCell` and link the price label
-
-2- Subclass `UICollectionViewController` and do the conversion in `cellForItemAtIndexPath`
-
-Step by step:
+<span class="important-note">Remember: You have FULL access to the data parsed by accessing the **array** property on your collection view</span>
 
 * Create a new class, call it `CustomCollectionViewCell`
 
@@ -243,7 +242,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
 - (UICollectionViewCell &#42;)collectionView:(UICollectionView &#42;)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath &#42;)indexPath {
   ALCollectionView &#42;collection = (ALCollectionView &#42;)collectionView;
-  CustomTableViewCell &#42;cell = [collectionView cellForItemAtIndexPath:indexPath];
+  CustomCollectionViewCell &#42;cell = [collectionView cellForItemAtIndexPath:indexPath];
   
   NSDictionary &#42;item = (NSDictionary &#42;)collection.array[indexPath.row];
   CGFloat price = [item[@"price"] floatValue];

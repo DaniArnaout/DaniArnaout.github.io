@@ -1,7 +1,11 @@
-# Table View
-> Learn how to populate a native `UITableView` from an API without a single line of code! 
+<div>
+<span class="right-note">9 minutes tutorial</span>
+ <h1>Table View</h1>
+</div>
 
-You're building the conversations screen in a chat app. Here are the API and the design.
+<span class="regular-note">Populate a table view without writing a single line of code!</span>
+
+**Example:** Chatting app
 
 **API URL**: [https://api.abstractlayer.com/demo/silicon_valley/get_users](https://api.abstractlayer.com/demo/silicon_valley/get_users) 
 
@@ -101,11 +105,11 @@ From the menu bar choose:
 
 `Editor → Embed in → Navigation Controller`
 
-* Click on your navigation controller then check the box that says `Is initial View Controller` from the attributes inspector
+* Click on your navigation controller then check the box that says `Is initial View Controller` from the **Attributes Inspector**
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-initial.png">
 
-* Click on your prototype cell, and set the `cell identifier` to `cell` in the attributes inspector
+* Click on your prototype cell, and set the `cell identifier` to `cell` in the **Attributes Inspector**
 
 * Drag the prototype cell in your storyboard from the bottom to increase its `height to 80`
 
@@ -132,11 +136,11 @@ It's time to bind data between the JSON document and the UI elements.
 
 * Copy the URL
 
-* Go to your storyboard and click on your `UITableView` and change its class to `ALTableView` in the identity inspector
+* Go to your storyboard and click on your `UITableView` and change its class to `ALTableView` in the **Identity Inspector**
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cptable.png">
 
-* Navigate to your attributes inspector, and you'll find a list of new attributes
+* Navigate to your **Attributes Inspector**, and you'll find a list of new attributes
 
 * Paste the URL you just copied in the new `Url` field
 
@@ -148,7 +152,7 @@ Your table view is now ready to process the API. It's time to match the **JSON k
 
 **User Image**
 
-* Click on your `UIImageView` and change its class to `ALImageView` in the identity inspector
+* Click on your `UIImageView` and change its class to `ALImageView` in the **Identity Inspector**
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpimage.png">
 
@@ -164,7 +168,7 @@ To get a circular user image, turn the `circular` option `ON`.
 
 **Name Label**
 
-* Click on the name label and change its class to `ALLabel` in the identity inspector
+* Click on the name label and change its class to `ALLabel` in the **Identity Inspector**
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cplabel.png">
 
@@ -174,13 +178,13 @@ To get a circular user image, turn the `circular` option `ON`.
 
 **Last Message Label**
 
-* Click on the last message label and change its class to `ALLabel` in the attributes inspector
+* Click on the last message label and change its class to `ALLabel` in the **Attributes Inspector**
 
 * Type in `last_message` in the `Json Key` field
 
 **Date Label**
 
-* Click on the date label and change its class to `ALDateLabel` in the attributes inspector
+* Click on the date label and change its class to `ALDateLabel` in the **Attributes Inspector**
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpdate.png">
 
@@ -192,7 +196,7 @@ To get a circular user image, turn the `circular` option `ON`.
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-format.png">
 
-<span class="important-note">How do I handle errors? Check out the <a href="/#/menu/table-view/error-handling" target="_blank">Error handling section</a></span>
+<span class="important-note">Handle any kind of error by checking the <a href="/#/menu/table-view/error-handling" target="_blank">Error handling section</a></span>
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
  
