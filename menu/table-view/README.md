@@ -138,7 +138,7 @@ It's time to bind data between the JSON document and the UI elements.
 
 * Go to your storyboard and click on your `UITableView` and change its class to `ALTableView` in the **Identity Inspector**
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cptable.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-cptable.png">
 
 * Navigate to your **Attributes Inspector**, and you'll find a list of new attributes
 
@@ -154,11 +154,11 @@ Your table view is now ready to process the API. It's time to match the **JSON k
 
 * Click on your `UIImageView` and change its class to `ALImageView` in the **Identity Inspector**
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpimage.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpimage.png">
 
 * Type in `image_url` in the `Json Key` field so that Abstract Layer can automatically load the image using its URL value
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-image-url.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-image-url.png">
 
 **Circular Image**
 
@@ -170,11 +170,11 @@ To get a circular user image, turn the `circular` option `ON`.
 
 * Click on the name label and change its class to `ALLabel` in the **Identity Inspector**
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cplabel.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-cplabel.png">
 
 * Type in `name` in the `Json Key` field to automatically match the JSON value with the name label
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-name.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-name.png">
 
 **Last Message Label**
 
@@ -186,7 +186,7 @@ To get a circular user image, turn the `circular` option `ON`.
 
 * Click on the date label and change its class to `ALDateLabel` in the **Attributes Inspector**
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpdate.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpdate.png">
 
 * Type in `timestamp` in the `Json Key` field
 
@@ -194,7 +194,7 @@ To get a circular user image, turn the `circular` option `ON`.
 
 <span class="regular-note"> The format should abide by [Apple's DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter) rules</span>
 
-<img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-format.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-format.png">
 
 <span class="important-note">Handle any kind of error by checking the <a href="/#/menu/table-view/error-handling" target="_blank">Error handling section</a></span>
 
