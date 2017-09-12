@@ -9,6 +9,7 @@
 	- [XIB](/menu/table-view/xib)
 	- [Authentication](/menu/table-view/authentication)
 	- [Custom cases](/menu/table-view/custom-cases)
+	- [Error handling](/menu/table-view/error-handling)
 - **Collection view**
 	- [**Overview**](/menu/collection-view/)
 	- [Parameters](/menu/collection-view/parameters)
@@ -18,6 +19,7 @@
 	- [XIB](/menu/collection-view/xib)
 	- [Authentication](/menu/collection-view/authentication)
 	- [Custom cases](/menu/collection-view/custom-cases)
+	- [Error handling](/menu/collection-view/error-handling)
 - [**Debugging**](/menu/debugging/)
 - [**Changelog**](/menu/changelog/)
 	- [V1.0](/menu/changelog/1.0/) 	

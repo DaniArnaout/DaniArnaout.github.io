@@ -241,11 +241,11 @@ Step by step:
 * Replace the content of the class with the following:
 
 <div style="height:30px;">
-<button id="objcButton" onclick="showObjc()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: darkGray;">Objective-C</button>
-<button id="swiftButton" onclick="showSwift()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: rgb(81,148,220); font-weight:600;">Swift</button>
+<button class="objcButton" onclick="showObjc()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: darkGray;">Objective-C</button>
+<button class="swiftButton" onclick="showSwift()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: rgb(81,148,220); font-weight:600;">Swift</button>
 </div>
 
-<div id="swiftDIV" style="background-color:rgb(248,248,248);">
+<div class="swiftDIV" style="background-color:rgb(248,248,248);">
 <pre><code>
 import UIKit
 import AbstractLayer
@@ -303,7 +303,7 @@ class TableViewController: UITableViewController {
 </div>
 
 
-<div style="display:none; background-color:rgb(248,248,248);" id="objcDIV">
+<div style="display:none; background-color:rgb(248,248,248);" class="objcDIV">
 <pre><code>
 #import "TableViewController.h"
 #import &lt;AbstractLayer/AbstractLayer.h&gt;

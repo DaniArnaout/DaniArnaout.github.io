@@ -26,34 +26,52 @@
 <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
 <script>
   function showSwift() {
-    var x = document.getElementById('swiftDIV');
-    var y = document.getElementById('objcDIV');
-    x.style.display = 'block';
-    y.style.display = 'none';
+    var x = document.getElementsByClassName('swiftDIV');
+    var y = document.getElementsByClassName('objcDIV');
+    for(var i = 0; i < x.length; i++) {
+        x[i].style.display = 'block';    
+    }
+    for(var i = 0; i < y.length; i++) {
+        y[i].style.display = 'none';
+    }
+    
 
-    var swiftButton = document.getElementById('swiftButton');
-    swiftButton.style.color = 'rgb(81,148,220)';
-    swiftButton.style.fontWeight = 600;
+    var swiftButton = document.getElementsByClassName('swiftButton');
+    for(var i = 0; i < swiftButton.length; i++) {
+        swiftButton[i].style.color = 'rgb(81,148,220)';
+        swiftButton[i].style.fontWeight = 600;
+    }
+    
 
-    var objcButton = document.getElementById('objcButton');
-    objcButton.style.color = 'darkGray';
-    objcButton.style.fontWeight = 'normal';
-
+    var objcButton = document.getElementsByClassName('objcButton');
+    for(var i = 0; i < objcButton.length; i++) {
+    objcButton[i].style.color = 'darkGray';
+    objcButton[i].style.fontWeight = 'normal';
+    }
 
   }
   function showObjc() {
-    var x = document.getElementById('swiftDIV');
-    var y = document.getElementById('objcDIV');
-    y.style.display = 'block';
-    x.style.display = 'none';
+    var x = document.getElementsByClassName('swiftDIV');
+    var y = document.getElementsByClassName('objcDIV');
+        for(var i = 0; i < x.length; i++) {
+        x[i].style.display = 'none';    
+    }
+    for(var i = 0; i < y.length; i++) {
+        y[i].style.display = 'block';
+    }
 
-    var swiftButton = document.getElementById('swiftButton');
-    swiftButton.style.color = 'darkGray';
-    swiftButton.style.fontWeight = 'normal';
+    var swiftButton = document.getElementsByClassName('swiftButton');
+    for(var i = 0; i < swiftButton.length; i++) {
+    swiftButton[i].style.color = 'darkGray';
+    swiftButton[i].style.fontWeight = 'normal';
+    }
 
-    var objcButton = document.getElementById('objcButton');
-    objcButton.style.color = 'rgb(81,148,220)';
-    objcButton.style.fontWeight = 600;
+    var objcButton = document.getElementsByClassName('objcButton');
+        for(var i = 0; i < objcButton.length; i++) {
+    objcButton[i].style.color = 'rgb(81,148,220)';
+    objcButton[i].style.fontWeight = 600;
+    }
+    
   }
 </script>
 </html>
