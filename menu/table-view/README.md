@@ -123,16 +123,6 @@ From the menu bar choose:
 * Choose `2 lines` for last message label
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-2-line.png">
-	
-#### Circular Image
-
-To get a circular user image:
-
-* Click on your user image view and head to the attribute inspector.
-
-* Choose `ON` for `circular`. 
-
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-circular-image.png">
 
 ### Magic (Auto data-binding)
 
@@ -156,6 +146,8 @@ It's time to bind data between the JSON document and the UI elements.
 
 Your table view is now ready to process the API. It's time to match the **JSON keys** with the **UI elements** to fill the data automatically.
 
+**User Image**
+
 * Click on your `UIImageView` and change its class to `ALImageView` in the identity inspector
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpimage.png">
@@ -163,6 +155,14 @@ Your table view is now ready to process the API. It's time to match the **JSON k
 * Type in `image_url` in the `Json Key` field so that Abstract Layer can automatically load the image using its URL value
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-image-url.png">
+
+**Circular Image**
+
+To get a circular user image, turn the `circular` option `ON`. 
+
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-circular-image.png">
+
+**Name Label**
 
 * Click on the name label and change its class to `ALLabel` in the identity inspector
 
@@ -172,9 +172,13 @@ Your table view is now ready to process the API. It's time to match the **JSON k
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-name.png">
 
+**Last Message Label**
+
 * Click on the last message label and change its class to `ALLabel` in the attributes inspector
 
 * Type in `last_message` in the `Json Key` field
+
+**Date Label**
 
 * Click on the date label and change its class to `ALDateLabel` in the attributes inspector
 
@@ -184,9 +188,11 @@ Your table view is now ready to process the API. It's time to match the **JSON k
 
 * Type in `MM/dd/yyyy` in the `Output Format` field to get the desired date format displayed. 
 
-> The format should abide by [Apple's DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter) rules
+<span class="regular-note"> The format should abide by [Apple's DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter) rules</span>
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-format.png">
+
+<span class="important-note">How do I handle errors? Check out the <a href="/#/menu/table-view/error-handling" target="_blank">Error handling section</a></span>
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
  
@@ -200,21 +206,12 @@ The answer is: **VERY!**
 
 Check out this example to see for yourself.
 
-### Display "Today" & "Yesterday" instead of full date
+### Display "Today" & "Yesterday" instead of full "MM/dd/yyyy" date
 
-Instead of just displaying the dates in `MM/dd/yyyy` format, let's add 2 conditions. Display `today` or `yesterday` if the dates are within these two ranges.
+<span class="important-note"> Remember: **ALTableView** is a subclass of **UITableView**<span>
 
-> Remember: `ALTableView` is a subclass of `UITableView`
+<span class="important-note"> Remember: You have FULL access to the data parsed by accessing the **array** property on your Table view</span>
 
-> Remember: You have FULL access to the data parsed by accessing the `array` property on your Table view
-
-How to do it:
-
-1- Subclass `UITableViewCell` and link the date label
-
-2- Subclass `UITableViewController` and do the conversion in `cellForItemAtIndexPath`
-
-Step by step:
 
 * Create a new class, call it `CustomTableViewCell`
 
@@ -222,19 +219,19 @@ Step by step:
 
 * Set the Table view cell class to `CustomTableViewCell`
 
-<img width="300" alt="Table view" src="/menu/collection-view/attachments/collection-view-main-custom-cell.png">
+<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-custom-tableviewcell-class.png">
 
 * Control-drag your date label to the class as a new outlet and call it `dateLabel`
 
 * Don't forget to import `AbstractLayer` to the class's header
 
-<img width="600" alt="Collection view" src="/menu/table-view/attachments/table-view-main-link-date.png">
+<img width="600" alt="Table view" src="/menu/table-view/attachments/table-view-main-link-date.png">
 
 * Create a new class, call it `TableViewController` and subclass it form `UITableViewController`
 
 <img width="600" alt="Table view" src="/menu/table-view/attachments/table-view-main-subclass-uitableviewcontroller.png">
 
-* Set your collection view class in storyboard to `TableViewController`
+* Set your table view class in storyboard to `TableViewController`
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-custom-tableviewcontroller-class.png">
 
