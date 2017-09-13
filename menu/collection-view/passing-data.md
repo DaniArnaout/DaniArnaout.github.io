@@ -1,4 +1,4 @@
-### Passing Data
+# Passing Data
 
 > Learn how to pass parsed data from your collection view
 

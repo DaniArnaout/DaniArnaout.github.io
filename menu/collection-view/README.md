@@ -3,7 +3,7 @@
  <h1>Collection View</h1>
 </div>
 
-<span class="regular-note">Populate a collection view without writing a single line of code! </span>
+<span style="background-color:rgb(248,248,248);padding:15px;font-weight:800;font-size:16;">Build an API-backed collection view in minutes, right from Interface Builder!</span>
 
 **Example**: Marketplace app
 
@@ -160,11 +160,23 @@ Run the project, and there you go! MAGIC!
 
 ## Hold on
 
-This looks great so far, but we're sure you've got many questions about how far can Absract Layer go. 
+This looks great so far, but we're sure you've got many questions about how far can Abstract Layer go. 
 
-The answer is: **VERY!**
+<table style="width:100%">
+  <tr style="height:50px">
+    <td class="row-text"><b><a href="/#/menu/collection-view/error-handling" target="_blank">Error Handling</a></b><p>Handle all kind of errors when loading your collection view</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/passing-data" target="_blank">Passing Data</a></b><p>You have FULL access to parsed data, so passing it is very simple</p><br/></td>
+    <td class="row-text"><b><a href="/#/menu/collection-view/parameters" target="_blank">Parameters</a></b><p>Be it Header or Body, Static or Dynamic, it's all in Interface Builder</p><br/></td> 
+  </tr>
 
-Check out this example to see for yourself.
+  <tr>
+    <td class="row-text"><b><a href="/#/menu/collection-view/pagination" target="_blank">Pagination</a></b><p>Enabling pagination takes less than a minute</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/parsing" target="_blank">Complex JSON</a></b><p>Any form of JSON is supported, no matter how complex it is</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/loader" target="_blank">Loader</a></b><p>Enable loaders and pull-to-refresh with 2 clicks</p><br/></td> 
+  </tr>
+</table>
+
+**The example below shows how you can fully customize the collection view example by modifying the parsed data before displaying it.**
 
 ### Convert label price from USD to EUR
 
@@ -281,15 +293,26 @@ To customize any aspect of Abstract Layer, simply:
 
 ### Where to go next?
 
-> Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/collection-view/Marketplace.zip">final project</a> and try it out
+Abstract Layer supports lots of features on `ALCollectionView`, so make sure to check them all out!
 
-Abstract Layer supports lots of features on the `ALCollectionView`, so make sure to check them all out!
+<table style="width:100%">
+  <tr style="height:50px">
+    <td class="row-text"><b><a href="/#/menu/collection-view/error-handling" target="_blank">Error Handling</a></b><p>Handle all kind of errors when loading your collection view</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/passing-data" target="_blank">Passing Data</a></b><p>You have FULL access to parsed data, so passing it is very simple</p><br/></td>
+    <td class="row-text"><b><a href="/#/menu/collection-view/parameters" target="_blank">Parameters</a></b><p>Be it Header or Body, Static or Dynamic, it's all in Interface Builder</p><br/></td> 
+  </tr>
 
-* [Parameters](/menu/collection-view/parameters)
-* [Pagination](/menu/collection-view/pagination)
-* [Parsing](/menu/collection-view/parsing)
-* [Loader & pull to refresh](/menu/collection-view/loader)
-* [XIB](/menu/collection-view/xib)
-* [Authentication](/menu/collection-view/authentication)
+  <tr>
+    <td class="row-text"><b><a href="/#/menu/collection-view/pagination" target="_blank">Pagination</a></b><p>Enabling pagination takes less than a minute</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/parsing" target="_blank">Complex JSON</a></b><p>Any form of JSON is supported, no matter how complex it is</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/loader" target="_blank">Loader</a></b><p>Enable loaders and pull-to-refresh with 2 clicks</p><br/></td> 
+  </tr>
+  
+    <tr>
+    <td class="row-text"><b><a href="/#/menu/collection-view/xib" target="_blank">XIB</a></b><p>Reuse cells by designing them in their own XIB</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/authentication" target="_blank">Authentication</a></b><p>JWT is handled automtically once you provide your keys</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/custom-cases" target="_blank">And More...</a></b><p>Check out the dedicated section for custom cases</p><br/></td> 
+  </tr>
+</table>
 
-As for customizability, Abstract Layer has a [dedicated section](/menu/collection-view/custom-cases) for it.
+<span class="regular-note">Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/collection-view/Marketplace.zip">final project</a> and try it out!</span>
