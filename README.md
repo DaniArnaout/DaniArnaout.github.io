@@ -8,7 +8,7 @@
 
 ### Install framework
 
-* <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.2.zip">Download Abstract Layer framework.</a> (Installation via `Cocoapods` will be available soon)
+* <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/framework/AbstractLayerv1.0.3.zip">Download Abstract Layer framework.</a> (Installation via `Cocoapods` will be available soon)
 * **Drag** `AbstractLayer.framework` into your project and make sure `Copy items if needed` is checked
 <br/><br/>
 <img width="800" alt="Xcode" src="../../menu/getting-started/attachments/quick-start-framework.png">
