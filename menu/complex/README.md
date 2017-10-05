@@ -1,92 +1,15 @@
 <div>
-<span class="right-note">9 minutes tutorial</span>
- <h1>Table View</h1>
+<span class="right-note">15 minutes tutorial</span>
+ <h1>Collection View inside a Table View</h1>
 </div>
 
-<span style="background-color:rgb(248,248,248);padding:15px;font-weight:800;font-size:16;">Build an API-backed table in minutes, right from Interface Builder!</span>
+**Build a complex API-backed collection inside a table in minutes, right from Interface Builder!**
 
-**Example:** Chatting app
+**Example:** Messenger-like app
 
-**API URL**: [https://api.abstractlayer.com/demo/silicon_valley/get_users](https://api.abstractlayer.com/demo/silicon_valley/get_users) 
+**API URL**: [https://api.abstractlayer.com/demo/complex/get_contacts_and_messages](https://api.abstractlayer.com/demo/complex/get_contacts_and_messages)
 
-<details>
-  <summary>Click the arrow to check out the full JSON response</summary>
-
-    <pre><code>[
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/richard-hendricks.jpg",
-    "timestamp": 1491631526,
-    "last_message": "Thank god they use tabs!",
-    "name": "Richard Hendricks",
-    "id": "5925b5ac22f9a51d0ca5a3ce"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/guilfoyle.jpg",
-    "timestamp": 1491639798,
-    "last_message": "This framework is better than hell.",
-    "name": "Guilfoyle",
-    "id": "5925b5ac58cff049f195e566"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/dinesh.jpg",
-    "timestamp": 1491633121,
-    "last_message": "I can’t believe Guilfoyle actually loved something other than himself.",
-    "name": "Dinesh",
-    "id": "5925b5ac71aef5f0f3febd4a"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/jared.jpg",
-    "timestamp": 1491634194,
-    "last_message": "Based on my SWOT analysis, this framework is a great investment.",
-    "name": "Jared",
-    "id": "5925b5ac6af1272071a57d72"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/jian-yang.jpg",
-    "timestamp": 1491634511,
-    "last_message": "This is not a hotdog.",
-    "name": "Jian Yang",
-    "id": "5925b5acdfecdab484513b96"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/erlic-bachman.jpg",
-    "timestamp": 1491642125,
-    "last_message": "Abstract Layer is the intersection of spirituality and automation.",
-    "name": "Erlic Bachman",
-    "id": "5925b5acec7ff952f35a65eb"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/laurie-bream.jpg",
-    "timestamp": 1491633389,
-    "last_message": "Is Abstract Layer raising?",
-    "name": "Laurie Bream",
-    "id": "5925b5ac9b66bc12c486cdfb"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/gavin-belson.jpg",
-    "timestamp": 1491641044,
-    "last_message": "Why again did Hooli not build this framework?",
-    "name": "Gavin Belson",
-    "id": "5925b5acff14642da4571ef2"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/russ-hanneman.jpg",
-    "timestamp": 1491630862,
-    "last_message": "This framework f*cks!",
-    "name": "Russ Hanneman",
-    "id": "5925b5ac42c8cdfb0c17664d"
-  },
-  {
-    "image_url": "http://docs.abstractlayer.com/demo/table-view/silicon-valley/images/big-head.jpg",
-    "timestamp": 1491639079,
-    "last_message": "Woah this Abstract Layer thing is awesome!!",
-    "name": "Big Head",
-    "id": "5925b5ac29f5b9e382590e1a"
-  }
-]    </code></pre>
-</details>
-
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
+<img width="400" alt="Table view" src="/menu/complex/attachments/complex-final-design.png">
 
 ### Integrate the framework
 
@@ -105,13 +28,21 @@ From the menu bar choose:
 
 <img width="800" alt="Table view" src="/menu/table-view/attachments/table-view-main-initial.png">
 
-* Click on your prototype cell, and set the `cell identifier` to `cell` in the **Attributes Inspector**
+The table view will have 2 sections (contacts & messages) each is represented by a prototype cell.
+
+Follow the next steps to achieve the following storyboard design:
+
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-storybaord.png">
+
+**Design messages prototype cell:**
+
+* Click on your prototype cell, and set the `cell identifier` to `messageCell` in the **Attributes Inspector**
 
 * Drag the prototype cell in your storyboard from the bottom to increase its `height to 80`
 
 * Design the tableview's cell to match the design
 	
-	<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-design.png">
+	<img width="300" alt="Table view" src="/menu/complex/attachments/complex-messages-cell.png">
 	
 	* `UIImageView` for the user image **(size 50x50)**
 	* `UILabel` for the name label  **(Font size 13, semibold, black)**
@@ -124,11 +55,32 @@ From the menu bar choose:
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-2-line.png">
 
+* To design the header of the cell, drag another UITableviewCell prototype cell from the **Object Library** and set its cell identifier to `messageHeader`.
+
+* Drag a UILabel to this new header cell and rename it `Messages`
+
+**Design contacts prototype cell:**
+
+* Drag an instance of `UITableViewCell` from the **Object Library** and set its identifier to `contactCell`
+
+* Drag a `UICollectionView` and make it take the full width of the cell.
+
+**Design the collection view cell:**
+	
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-contact-cell.png">
+	
+* `UIImageView` for the user image **(size 50x50)**
+* `UILabel` for the name label  **(Font size 12, regular, dark gray)**
+
+* To design the header of the cell, drag another UITableviewCell prototype cell from the **Object Library** and place it on top of the message cell, then set its cell identifier to `contactHeader`.
+
+* Drag a UILabel to this new header cell and rename it `Contacts`
+	
 ### Magic (Auto data-binding)
 
 It's time to bind data between the JSON document and the UI elements.
 
-* Open the URL in a browser [https://api.abstractlayer.com/demo/silicon_valley/get_users](https://api.abstractlayer.com/demo/silicon_valley/get_users) 
+* Open the URL in a browser [https://api.abstractlayer.com/demo/complex/get_contacts_and_messages](https://api.abstractlayer.com/demo/complex/get_contacts_and_messages)
 
 * Copy the URL
 
@@ -140,11 +92,20 @@ It's time to bind data between the JSON document and the UI elements.
 
 * Paste the URL you just copied in the new `Url` field
 
-* Type in `GET` for HTTP method
+* Each section has a different `cell identifier`, so type in both separated by a comma. `contactCell,messageCell`
 
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-url.png">
+* Each section has its own `header identifier`, so type in both separated by a comma. `contactHeader,messageHeader`
+
+* As for the JSON root, the first section API is handled by the collection view itself, so it must be left empty, which is represented by a dash (-). This means that the first section consists of only 1 row that is not to be handled by the table parsed API itself.
+
+* The second section however, has `messages` as the root of the JSON to be parsed. (Check the API to see how the response looks like), this is why you need to specify it there.
+The end result is `-,messages` which means that the first section will be handled elsewhere, while the second section of the table will be handled by the parsed array.
+
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-altableview.png">
 
 Your table view is now ready to process the API. It's time to match the **JSON keys** with the **UI elements** to fill the data automatically.
+
+<span class="regular-note">The next section applies for both prototype cells, so make sure you apply it on both the contact and message cells.</span>
 
 **User Image**
 
@@ -194,7 +155,7 @@ To get a circular user image, turn the `circular` option `ON`.
 
 <span class="important-note">Handle any kind of error by checking the <a href="/#/menu/table-view/error-handling" target="_blank">Error handling section</a></span>
 
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-designer-screenshot.png">
+<img width="400" alt="Table view" src="/menu/complex/attachments/complex-final-design.png">
  
 Run the project, and there you go! MAGIC!
 
@@ -247,7 +208,7 @@ This looks great so far, but we're sure you've got many questions about how far 
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-custom-tableviewcontroller-class.png">
 
-* Replace the content of the class with the following:
+* Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/complex/TableViewController.swift">TableViewController class</a> **OR** replace the content of the class with the following:
 
 <div style="height:30px;">
 <button class="objcButton" onclick="showObjc()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: darkGray;">Objective-C</button>
@@ -281,10 +242,15 @@ class TableViewController: UITableViewController {
   //
   override func tableView(&#95; tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let table = tableView as! ALTableView
+    
+    if (indexPath.section == 0) {
+      return table.cellForRow(at: indexPath)!
+    }
+    
     let cell = table.cellForRow(at: indexPath) as! CustomTableViewCell
     
     // Get item info
-    let array = table.array.first as! [[String:Any]]
+    let array = table.array[1] as! [[String:Any]]
     let item = array[indexPath.row] // Get item dictionary
     let timestamp = item["timestamp"] as! Double
     
@@ -298,6 +264,10 @@ class TableViewController: UITableViewController {
     return cell
   }
   
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return tableView.numberOfSections
+  }
+  
   override func tableView(&#95; tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tableView.numberOfRows(inSection: section)
   }
@@ -306,6 +276,12 @@ class TableViewController: UITableViewController {
     let table = tableView as! ALTableView
     return table.heightForRow(at: indexPath)
   }
+  
+  override func tableView(&#95; tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let table = tableView as! ALTableView
+    return table.viewForHeader(inSection: section)
+  }
+
 }
 
 </code></pre>
@@ -378,7 +354,7 @@ class TableViewController: UITableViewController {
 </code></pre>
 </div>
 
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-date-change.png">
+<img width="400" alt="Table view" src="/menu/complex/attachments/complex-customization-final-design.png">
 
 * Run the app
 
@@ -418,4 +394,4 @@ Abstract Layer supports lots of features on `ALTableView`, so make sure to check
   </tr>
 </table>
 
-<span class="regular-note">Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/table-view/Conversations.zip">final project</a> and try it out</span>
+<span class="regular-note">Download the <a href="https://github.com/DaniArnaout/DaniArnaout.github.io/raw/master/demo/complex/Messenger.zip">final project</a> and try it out</span>

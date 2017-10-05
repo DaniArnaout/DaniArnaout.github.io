@@ -310,7 +310,7 @@ Abstract Layer supports lots of features on `ALCollectionView`, so make sure to 
   
     <tr>
     <td class="row-text"><b><a href="/#/menu/collection-view/xib" target="_blank">XIB</a></b><p>Reuse cells by designing them in their own XIB</p><br/></td> 
-    <td class="row-text"><b><a href="/#/menu/collection-view/authentication" target="_blank">Authentication</a></b><p>JWT is handled automtically once you provide your keys</p><br/></td> 
+    <td class="row-text"><b><a href="/#/menu/collection-view/authentication" target="_blank">Authentication</a></b><p>JWT is handled automatically once you provide your keys</p><br/></td> 
     <td class="row-text"><b><a href="/#/menu/collection-view/custom-cases" target="_blank">And More...</a></b><p>Check out the dedicated section for custom cases</p><br/></td> 
   </tr>
 </table>

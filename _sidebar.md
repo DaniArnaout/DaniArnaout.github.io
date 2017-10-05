@@ -1,5 +1,6 @@
 - [**FAQ**](/menu/faq/)
 - [**Getting started**](/)
+- [**Complex project**](/menu/complex/)
 - **Table view**
 	- [**Overview**](/menu/table-view/)
 	- [Error handling](/menu/table-view/error-handling)
