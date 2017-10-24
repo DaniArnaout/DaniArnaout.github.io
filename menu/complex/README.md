@@ -80,13 +80,15 @@ Follow the next steps to achieve the following storyboard design:
 
 It's time to bind data between the JSON document and the UI elements.
 
+#### Table View:
+
 * Open the URL in a browser [https://api.abstractlayer.com/demo/complex/get_contacts_and_messages](https://api.abstractlayer.com/demo/complex/get_contacts_and_messages)
 
 * Copy the URL
 
 * Go to your storyboard and click on your `UITableView` and change its class to `ALTableView` in the **Identity Inspector**
 
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-cptable.png">
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-altableview-class.png">
 
 * Navigate to your **Attributes Inspector**, and you'll find a list of new attributes
 
@@ -101,9 +103,19 @@ It's time to bind data between the JSON document and the UI elements.
 * The second section however, has `messages` as the root of the JSON to be parsed. (Check the API to see how the response looks like), this is why you need to specify it there.
 The end result is `-,messages` which means that the first section will be handled elsewhere, while the second section of the table will be handled by the parsed array.
 
-<img width="300" alt="Table view" src="/menu/complex/attachments/complex-altableview.png">
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-alcollectionview.png">
 
-Your table view is now ready to process the API. It's time to match the **JSON keys** with the **UI elements** to fill the data automatically.
+#### Collection View:
+
+Same steps apply for the collection view, so click on it, and set its class from `UICollectionView` to `ALCollectionView` in the **Identity Inspector**
+
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-alcollectionview-class.png">
+
+* Navigate to your **Attributes Inspector**, and fill out the following attributes
+
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-alcollectionview.png">
+
+Your table view and collection view are now ready to process the API. It's time to match the **JSON keys** with the **UI elements** to fill the data automatically.
 
 <span class="regular-note">The next section applies for both prototype cells, so make sure you apply it on both the contact and message cells.</span>
 
@@ -117,11 +129,18 @@ Your table view is now ready to process the API. It's time to match the **JSON k
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-image-url.png">
 
-**Circular Image**
+#### User Image
 
-To get a circular user image, turn the `circular` option `ON`. 
+**Placeholder:** You can choose an image from your bundle as a placeholder image while your real image gets downloaded.
 
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-circular-image.png">
+**Disk Cache:** By default, all images handled by Abstract Layer will be downloaded and cached both in memory and on disk. You can turn off saving on disk by choosing `NO` for `Disk Cache`.
+
+**Cache Policty:** The default `Cache Policy` is Least Recently Used (LRU).
+Other available policies are (LRU, LFU, FIFO, LIFO).
+
+**Circular Option** Also, to get a circular user image, turn the `circular` option `ON`. 
+
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-image-cache.png">
 
 **Name Label**
 
