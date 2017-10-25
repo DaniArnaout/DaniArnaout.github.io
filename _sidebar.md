@@ -1,3 +1,4 @@
+- [**PREMIUM FEATURES**](/menu/pro/)
 - [**FAQ**](/menu/faq/)
 - [**Getting started**](/)
 - [**Complex project**](/menu/complex/)
