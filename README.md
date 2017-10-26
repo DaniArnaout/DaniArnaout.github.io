@@ -48,5 +48,5 @@
 
 ### Where to go next?
 You're all set, check these examples:
-* [Table View](/menu/table-view/) 
+* [Table View](/menu/complex/) 
 * [Collection View](/menu/collection-view/)

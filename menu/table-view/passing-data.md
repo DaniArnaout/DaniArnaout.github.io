@@ -30,3 +30,5 @@ For example, here's how you push the data of the cell the user has just tapped:
 }
 </code></pre>
 </div>
+
+> NOTE: If you specify your own **model class** in interface builder, then you'll receive an array of objects from that custom class instead of an array of dictionaries.

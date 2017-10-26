@@ -40,15 +40,15 @@ Follow the next steps to achieve the following storyboard design:
 
 * Drag the prototype cell in your storyboard from the bottom to increase its `height to 80`
 
-* Design the tableview's cell to match the design
-	
-	<img width="300" alt="Table view" src="/menu/complex/attachments/complex-messages-cell.png">
-	
-	* `UIImageView` for the user image **(size 50x50)**
-	* `UILabel` for the name label  **(Font size 13, semibold, black)**
-	* `UILabel` for the last message label **(Font size 12, regular, dark gray)**
-	* `UILabel` for the date label **(Font size 12, regular, light gray)**
-	
+* Design the table view's cell to match the design
+    
+    <img width="300" alt="Table view" src="/menu/complex/attachments/complex-messages-cell.png">
+    
+    * `UIImageView` for the user image **(size 50x50)**
+    * `UILabel` for the name label  **(Font size 13, semibold, black)**
+    * `UILabel` for the last message label **(Font size 12, regular, dark gray)**
+    * `UILabel` for the date label **(Font size 12, regular, light gray)**
+    
 
 
 * Choose `2 lines` for last message label
@@ -66,16 +66,16 @@ Follow the next steps to achieve the following storyboard design:
 * Drag a `UICollectionView` and make it take the full width of the cell.
 
 **Design the collection view cell:**
-	
+    
 <img width="300" alt="Table view" src="/menu/complex/attachments/complex-contact-cell.png">
-	
+    
 * `UIImageView` for the user image **(size 50x50)**
 * `UILabel` for the name label  **(Font size 12, regular, dark gray)**
 
 * To design the header of the cell, drag another UITableviewCell prototype cell from the **Object Library** and place it on top of the message cell, then set its cell identifier to `contactHeader`.
 
 * Drag a UILabel to this new header cell and rename it `Contacts`
-	
+    
 ### Magic (Auto data-binding)
 
 It's time to bind data between the JSON document and the UI elements.
@@ -92,7 +92,7 @@ It's time to bind data between the JSON document and the UI elements.
 
 * Navigate to your **Attributes Inspector**, and you'll find a list of new attributes
 
-* Paste the URL you just copied in the new `Url` field
+* Paste the URL you just copied into the new `Url` field
 
 * Each section has a different `cell identifier`, so type in both separated by a comma. `contactCell,messageCell`
 
@@ -100,8 +100,8 @@ It's time to bind data between the JSON document and the UI elements.
 
 * As for the JSON root, the first section API is handled by the collection view itself, so it must be left empty, which is represented by a dash (-). This means that the first section consists of only 1 row that is not to be handled by the table parsed API itself.
 
-* The second section however, has `messages` as the root of the JSON to be parsed. (Check the API to see how the response looks like), this is why you need to specify it there.
-The end result is `-,messages` which means that the first section will be handled elsewhere, while the second section of the table will be handled by the parsed array.
+* The second section, however, has `messages` as the root of the JSON to be parsed. (Check the API to see how the response looks like), this is why you need to specify it there.
+The end result is `-, messages` which means that the first section will be handled elsewhere, while the second section of the table will be handled by the parsed array.
 
 <img width="300" alt="Table view" src="/menu/complex/attachments/complex-alcollectionview.png">
 
@@ -135,7 +135,7 @@ Your table view and collection view are now ready to process the API. It's time 
 
 **Disk Cache:** By default, all images handled by Abstract Layer will be downloaded and cached both in memory and on disk. You can turn off saving on disk by choosing `NO` for `Disk Cache`.
 
-**Cache Policty:** The default `Cache Policy` is Least Recently Used (LRU).
+**Cache Policy:** The default `Cache Policy` is Least Recently Used (LRU).
 Other available policies are (LRU, LFU, FIFO, LIFO).
 
 **Circular Option** Also, to get a circular user image, turn the `circular` option `ON`. 
@@ -198,12 +198,57 @@ This looks great so far, but we're sure you've got many questions about how far 
 
 **The example below shows how you can fully customize the table view example by modifying the parsed data before displaying it.**
 
+### Auto-parsing to models
+
+Normally, you would create both a **Message** and a **Contact** class to pass data between different view controllers. 
+
+Create a class called **Message**:
+
+<div style="height:30px;">
+<button class="objcButton" onclick="showObjc()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: darkGray;">Objective-C</button>
+<button class="swiftButton" onclick="showSwift()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: rgb(81,148,220); font-weight:600;">Swift</button>
+</div>
+
+<div class="swiftDIV" style="background-color:rgb(248,248,248);">
+<pre><code>
+import Foundation
+
+public final class Message: NSObject {
+
+  // MARK: Declaration for string constants to be used to decode and also serialize.
+  private struct SerializationKeys {
+    static let name = "name"
+    static let lastMessage = "last_message"
+    static let imageUrl = "image_url"
+    static let id = "id"
+    static let timestamp = "timestamp"
+  }
+}
+</code></pre>
+</div>
+
+<div style="display:none; background-color:rgb(248,248,248);" class="objcDIV">
+<pre><code>
+#import <Foundation/Foundation.h>
+
+@interface Message : NSObject
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *lastMessage;
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, strong) NSDate *date;
+@end
+</code></pre>
+</div>
+
+Now you only have to type in the name of your class in your **attributes inspetor**.
+
+<img width="300" alt="Table view" src="/menu/complex/attachments/auto-parsing.png">
+
 ### Display "Today" & "Yesterday" instead of full "MM/dd/yyyy" date
 
 <span class="important-note"> Remember: **ALTableView** is a subclass of **UITableView**<span>
 
-<span class="important-note"> Remember: You have FULL access to the data parsed by accessing the **array** property on your Table view</span>
-
+<span class="important-note"> Remember: You have FULL access to **request** and **response**. Check <a href="/#/menu/table-view/custom-request" target="_blank">Custom Request</a>, <a href="/#/menu/table-view/passing-data" target="_blank">Pasing Data</a> & <a href="/#/menu/table-view/auto-parsing-models" target="_blank">Auto Parsing Models</a></span>
 
 * Create a new class, call it `CustomTableViewCell`
 
