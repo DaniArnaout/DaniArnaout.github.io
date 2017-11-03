@@ -42,7 +42,7 @@
 	<key>AbstractLayer</key>
 	<dict>
 		<key>Key</key>
-		<string><YOUR KEY></string>
+		<string>MkrAeXFfQokJrCF02dR9i9jqL2x32COj31mW5vYckpQ</string>
 	</dict>
 ```
 
