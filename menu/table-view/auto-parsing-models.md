@@ -30,7 +30,39 @@ Assume you have the following JSON document of chat messages
 
 And you want it to be parsed into your own custom model object **Message**.
 You already a class that looks like this:
+Create a class called **Message**:
 
+<div style="height:30px;">
+<button class="objcButton" onclick="showObjc()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: darkGray;">Objective-C</button>
+<button class="swiftButton" onclick="showSwift()" style="font-size: 14px; width: 100px; height: 30px; float: right; border: none; outline: none; background-color: rgb(248,248,248); color: rgb(81,148,220); font-weight:600;">Swift</button>
+</div>
+
+<div class="swiftDIV" style="background-color:rgb(248,248,248);">
+<pre><code>
+import Foundation
+
+@objcMembers
+class Message: NSObject {
+  var id: String?
+  var name: String?
+  var lastMessage: String?
+  var timestamp: NSNumber?
+}
+</code></pre>
+</div>
+
+<div style="display:none; background-color:rgb(248,248,248);" class="objcDIV">
+<pre><code>
+#import <Foundation/Foundation.h>
+
+@interface Message : NSObject
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *lastMessage;
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, strong) NSDate *date;
+@end
+</code></pre>
+</div>
 
 To parse the response into an array of **Message** objects, all what you have to do is type in **Message** in your attribute inspector, and Abstract Layer will hand you a fully parsed array.
 

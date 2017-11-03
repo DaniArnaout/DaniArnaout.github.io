@@ -30,7 +30,7 @@ From the menu bar choose:
 
 The table view will have 2 sections (contacts & messages) each is represented by a prototype cell.
 
-Follow the next steps to achieve the following storyboard design:
+Follow the steps below to achieve the following storyboard design:
 
 <img width="300" alt="Table view" src="/menu/complex/attachments/complex-storybaord.png">
 
@@ -103,7 +103,7 @@ It's time to bind data between the JSON document and the UI elements.
 * The second section, however, has `messages` as the root of the JSON to be parsed. (Check the API to see how the response looks like), this is why you need to specify it there.
 The end result is `-, messages` which means that the first section will be handled elsewhere, while the second section of the table will be handled by the parsed array.
 
-<img width="300" alt="Table view" src="/menu/complex/attachments/complex-alcollectionview.png">
+<img width="300" alt="Table view" src="/menu/complex/attachments/complex-altableview.png">
 
 #### Collection View:
 
@@ -119,17 +119,15 @@ Your table view and collection view are now ready to process the API. It's time 
 
 <span class="regular-note">The next section applies for both prototype cells, so make sure you apply it on both the contact and message cells.</span>
 
-**User Image**
+#### User Image
 
 * Click on your `UIImageView` and change its class to `ALImageView` in the **Identity Inspector**
 
 <img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-cpimage.png">
 
-* Type in `image_url` in the `Json Key` field so that Abstract Layer can automatically load the image using its URL value
+* Navigate to your **Attributes Inspector** and set the following:
 
-<img width="300" alt="Table view" src="/menu/table-view/attachments/table-view-main-image-url.png">
-
-#### User Image
+**JSON key:** Type in `image_url` in the `Json Key` field so that Abstract Layer can automatically load the image using its URL value
 
 **Placeholder:** You can choose an image from your bundle as a placeholder image while your real image gets downloaded.
 
@@ -213,16 +211,12 @@ Create a class called **Message**:
 <pre><code>
 import Foundation
 
-public final class Message: NSObject {
-
-  // MARK: Declaration for string constants to be used to decode and also serialize.
-  private struct SerializationKeys {
-    static let name = "name"
-    static let lastMessage = "last_message"
-    static let imageUrl = "image_url"
-    static let id = "id"
-    static let timestamp = "timestamp"
-  }
+@objcMembers
+class Message: NSObject {
+  var id: String?
+  var name: String?
+  var lastMessage: String?
+  var timestamp: NSNumber?
 }
 </code></pre>
 </div>
@@ -243,6 +237,8 @@ public final class Message: NSObject {
 Now you only have to type in the name of your class in your **attributes inspetor**.
 
 <img width="300" alt="Table view" src="/menu/complex/attachments/auto-parsing.png">
+
+That's all. Abstract Layer will now auto-parse the JSON document into your own custom classes. Check the section below to see a use case.
 
 ### Display "Today" & "Yesterday" instead of full "MM/dd/yyyy" date
 
@@ -314,9 +310,9 @@ class TableViewController: UITableViewController {
     let cell = table.cellForRow(at: indexPath) as! CustomTableViewCell
     
     // Get item info
-    let array = table.array[1] as! [[String:Any]]
+    let array = table.array[1] as! [Message]
     let item = array[indexPath.row] // Get item dictionary
-    let timestamp = item["timestamp"] as! Double
+	 let timestamp = item.timestamp as! Double
     
     // Date calculations
     if timestamp > today {
