@@ -39,16 +39,18 @@ class TableViewController: UITableViewController {
     let cell = table.cellForRow(at: indexPath) as! CustomTableViewCell
     
     // Get item info
-    let array = table.array[1] as! [[String:Any]]
-    let item = array[indexPath.row] // Get item dictionary
-    let timestamp = item["timestamp"] as! Double
     
+    let array = table.array[1] as! [Message]
+    let item = array[indexPath.row] // Get item dictionary
+    let timestamp = item.timestamp as! Double
+
     // Date calculations
     if timestamp > today {
       cell.dateLabel?.text = "Today"
     } else if timestamp > yesterday {
       cell.dateLabel?.text = "Yesterday"
     }
+    
     
     return cell
   }
@@ -70,5 +72,5 @@ class TableViewController: UITableViewController {
     let table = tableView as! ALTableView
     return table.viewForHeader(inSection: section)
   }
-
+  
 }
