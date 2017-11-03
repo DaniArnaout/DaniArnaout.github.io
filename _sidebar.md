@@ -1,5 +1,4 @@
-- [**PREMIUM FEATURES**](/menu/pro/)
-- [**FAQ**](/menu/faq/)
+- [**Premium Features**](/menu/pro/)
 - [**Getting started**](/)
 - **Table view**
 	- [**Overview**](/menu/complex/)
@@ -27,6 +26,7 @@
 	- [Custom request](/menu/collection-view/custom-request)
 	- [Custom cases](/menu/collection-view/custom-cases)
 - [**Debugging**](/menu/debugging/)
+- [**FAQ**](/menu/faq/)
 - [**Changelog**](/menu/changelog/)
 	- [V1.0](/menu/changelog/1.0/) 	
 - <a href="menu/api/index.html" target="_blank">**API DOCUMENTATION**</a>
