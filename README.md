@@ -28,8 +28,7 @@
 <b style="color:red;">Only</b> if you have **purchased** a license, [activate it here](/menu/getting-started/activate-license), otherwise proceed with the tutorial.
 
 ### Trial key
-> To get your free trial license key, email us at <a href="mailto:support@abstractlayer.com?Subject=Free%20Trial%20Key%20Request" target="_top">support@asbtractlayer.com</a>
-</p>
+> Here's your trial key: **MkrAeXFfQokJrCF02dR9i9jqL2x32COj31mW5vYckpQ**
 
 
 * Go to `info.plist` and add the following:
