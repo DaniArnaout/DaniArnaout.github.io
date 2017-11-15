@@ -76,6 +76,8 @@ Follow the steps below to achieve the following storyboard design:
 
 * Drag a UILabel to this new header cell and rename it `Contacts`
     
+<span class="regular-note">Before you move on, make sure to set the UI elements constraints properly!</span>
+    
 ### Magic (Auto data-binding)
 
 It's time to bind data between the JSON document and the UI elements.
